@@ -1,0 +1,227 @@
+<!DOCTYPE html><html lang="en" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>An Introduction to Ordinary Differential Equation | LUMINESCENCE</title><meta name="author" content="AYIN"><meta name="copyright" content="AYIN"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="一阶微分方程分离变量法  形如$$\frac{\mathrm{d}y}{\mathrm{d}x} &#x3D; f(x,y)$$若$f(x,y) &#x3D; g(x)h(y)$，这里$g,h$分别是$x$和$y$的连续函数，且$h(y)$不恒为零。则方程在$h(y)\ne 0$时可化为$$\frac{\mathrm{d}y}{h(y)} &#x3D; g(x)\mathrm{d}x$$积">
+<meta property="og:type" content="article">
+<meta property="og:title" content="An Introduction to Ordinary Differential Equation">
+<meta property="og:url" content="https://bessgendre.github.io/2020/05/26/ODE/index.html">
+<meta property="og:site_name" content="LUMINESCENCE">
+<meta property="og:description" content="一阶微分方程分离变量法  形如$$\frac{\mathrm{d}y}{\mathrm{d}x} &#x3D; f(x,y)$$若$f(x,y) &#x3D; g(x)h(y)$，这里$g,h$分别是$x$和$y$的连续函数，且$h(y)$不恒为零。则方程在$h(y)\ne 0$时可化为$$\frac{\mathrm{d}y}{h(y)} &#x3D; g(x)\mathrm{d}x$$积">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://bessgendre.github.io/img/calculation.jpg">
+<meta property="article:published_time" content="2020-05-26T05:00:00.000Z">
+<meta property="article:modified_time" content="2021-01-27T06:00:00.000Z">
+<meta property="article:author" content="AYIN">
+<meta property="article:tag" content="Mathematics">
+<meta property="article:tag" content="Physics">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://bessgendre.github.io/img/calculation.jpg"><link rel="shortcut icon" href="/img/avatar.jpg"><link rel="canonical" href="https://bessgendre.github.io/2020/05/26/ODE/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: 'Copy Successful',
+    error: 'Copy Error',
+    noSupport: 'Browser Not Supported'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: 'Just now',
+    min: 'minutes ago',
+    hour: 'hours ago',
+    day: 'days ago',
+    month: 'months ago'
+  },
+  copyright: {"limitCount":50,"languages":{"author":"Author: AYIN","link":"Link: ","source":"Source: LUMINESCENCE","info":"Copyright is owned by the author. For commercial reprints, please contact the author for authorization. For non-commercial reprints, please indicate the source."}},
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid/dist/infinitegrid.min.js',
+    buttonText: 'Load More'
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: true,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'An Introduction to Ordinary Differential Equation',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2021-01-27 00:00:00'
+}</script><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+    
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
+
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
+
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
+    
+      win.activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+        if (t === 'dark') activateDarkMode()
+        else if (t === 'light') activateLightMode()
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.3.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/avatar.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">7</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">5</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">3</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> Link</span></a></div><div class="menus_item"><a class="site-page" href="/download/"><i class="fa-fw fas fa-download"></i><span> Download</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('/img/calculation.jpg')"><nav id="nav"><span id="blog-info"><a href="/" title="LUMINESCENCE"><span class="site-name">LUMINESCENCE</span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> Link</span></a></div><div class="menus_item"><a class="site-page" href="/download/"><i class="fa-fw fas fa-download"></i><span> Download</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">An Introduction to Ordinary Differential Equation</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">Created</span><time class="post-meta-date-created" datetime="2020-05-26T05:00:00.000Z" title="Created 2020-05-26 00:00:00">2020-05-26</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">Updated</span><time class="post-meta-date-updated" datetime="2021-01-27T06:00:00.000Z" title="Updated 2021-01-27 00:00:00">2021-01-27</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/NOTES/">NOTES</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="An Introduction to Ordinary Differential Equation"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">Post Views:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><font size="4">
+
+<font face='KaiTi_GB2312'>
+
+<h2 id="一阶微分方程"><a href="#一阶微分方程" class="headerlink" title="一阶微分方程"></a>一阶微分方程</h2><h3 id="分离变量法"><a href="#分离变量法" class="headerlink" title="分离变量法"></a>分离变量法</h3></font>
+
+<p>形如<br>$$<br>\frac{\mathrm{d}y}{\mathrm{d}x} &#x3D; f(x,y)<br>$$<br>若$<del>f(x,y) &#x3D; g(x)h(y)</del>$，这里$<del>g,h</del>$分别是$<del>x</del>$和$<del>y</del>$的连续函数，且$<del>h(y)</del>$不恒为零。则方程在$<del>h(y)\ne 0</del>$时可化为<br>$$<br>\frac{\mathrm{d}y}{h(y)} &#x3D; g(x)\mathrm{d}x<br>$$<br>积分可得<br>$$<br>\int \frac{\mathrm{d}y}{h(y)} &#x3D; \int g(x)~\mathrm{d}x<br>$$<br>即<br>$$<br>H(y) &#x3D; G(x) + C<br>$$</p>
+<font face='KaiTi_GB2312'>
+
+<h3 id="齐次方程"><a href="#齐次方程" class="headerlink" title="齐次方程"></a>齐次方程</h3></font>
+
+<p>有些方程本身不能直接分离变量，但作适当的代换后，可用分离变量法求解。<br>一个函数$<del>f(x,y)</del>$称为$<del>n</del>$次齐次函数，如果对某个范围内的$<del>x,</del>y<del>$与$</del>t<del>$有<br>$$<br>f(tx,ty) &#x3D; t^nf(x,y)<br>$$<br>一阶微分方程<br>$$<br>P(x,y)\mathrm{d}x + Q(x,y)\mathrm{d}y &#x3D; 0<br>$$<br>称为齐次的，如果函数$</del>P<del>$和$</del>Q<del>$是同次的齐次函数。现在$</del>P(x,y)&#x2F;Q(x,y)<del>$是$</del>0<del>$次齐次函数，因此它可写为$</del>\varphi(\frac{y}{x})<del>$的形式。于是上述的齐次微分方程可化为形式<br>$$<br>\frac{\mathrm{d}y}{\mathrm{d}x} &#x3D; \varphi(\frac{y}{x})<br>$$<br>为了解上述方程，我们引入新的未知数函数<br>$$<br>u &#x3D; \frac{y}{x}<br>$$<br>从而<br>$$<br>\frac{\mathrm{d}y}{\mathrm{d}x} &#x3D; u + x\frac{\mathrm{d}u}{\mathrm{d}x}<br>$$<br>于是待求方程变为<br>$$<br>x\frac{\mathrm{d}u}{\mathrm{d}x} &#x3D; \varphi(u) - u<br>$$<br>此时可分离变量，成为<br>$$<br>\frac{\mathrm{d}u}{\varphi(u) - u} &#x3D; \frac{\mathrm{d}x}{x}<br>$$<br>两边积分，得到<br>$$<br>\int \frac{\mathrm{d}u}{\varphi(u) - u} &#x3D; \ln|x| + C<br>$$<br>求出不定积分后再用$</del>y&#x2F;x<del>$替换其中的$</del>u<del>$，即得到原方程的通解。注意若$</del>\varphi(u) - u<del>$有一个实零点$</del>u_0<del>$，则$</del>y &#x3D; u_0 x~$就是丢失的一个特解，应当补上。</p>
+<font face='KaiTi_GB2312'>
+
+<h3 id="一阶线性方程"><a href="#一阶线性方程" class="headerlink" title="一阶线性方程"></a>一阶线性方程</h3></font>
+
+<p>如果一阶微分方程中的未知函数$<del>y</del>$及其导函数$<del>y^\prime</del>$都是一次的，则称方程为一阶线性方程，它可化为标准形式<br>$$<br>\frac{\mathrm{d}y}{\mathrm{d}x} + P(x)y &#x3D; Q(x)<br>$$<br>若右端的$<del>Q(x)</del>$恒为零，则方程称为（一阶）线性齐次方程；否则，方程称为（一阶）线性非齐次方程。注意这里的“齐次”和先前说过的含义完全不同。<br>线性齐次方程的求解是相当容易的，因为它是可分离变量的：当$<del>y\neq 0</del>$时，我们有<br>$$<br>\frac{\mathrm{d}y}{y} &#x3D; -P(x)\mathrm{d}x<br>$$<br>得出<br>$$<br>\ln |y| &#x3D; -\int P(x)\mathrm{d}x + C_1<br>$$<br>由此得<br>$$<br>y &#x3D; Ce^{-\int P(x)\mathrm{d}x}<br>$$<br>其中$<del>C &#x3D; \pm e^{C_1}(\neq 0)</del>$<br>显然$<del>y &#x3D; 0</del>$是一个丢失的特解，只需令$<del>C &#x3D; 0</del>$就得到了这个解。故通解为<br>$$<br>y &#x3D; Ce^{-\int P(x)\mathrm{d}x}<br>$$<br>其中$<del>C</del>$为任意常数。为求非齐次方程的通解，我们将$<del>C</del>$易变为$<del>x</del>$的函数$<del>C(x)</del>$，即<br>$$<br>y &#x3D; C(x)e^{-\int P(x)\mathrm{d}x}<br>$$<br>带入原方程得<br>$$<br>\frac{\mathrm{d}C(x)}{\mathrm{d}x} &#x3D; Q(x)e^{\int P(x)\mathrm{d}x}<br>$$<br>两边积分得<br>$$<br>C(x) &#x3D; \int Q(x)e^{\int P(x)\mathrm{d}x}\mathrm{d}x + C<br>$$<br>带入可得非齐次方程的通解为<br>$$<br>y &#x3D; e^{-\int P(x)\mathrm{d}x}\left(\int Q(x)e^{\int P(x)\mathrm{d}x}\mathrm{d}x + C\right)<br>$$<br>有一些一阶方程，并不是线性方程，但可以通过适当的代换化为线性方程，进而其解易于求得。比如$<del>\mathrm{Bernoulli}</del>$方程。<br>$$<br>\frac{\mathrm{d}y}{\mathrm{d}x} + P(x)y &#x3D; Q(x)y^n<br>$$<br>其中$<del>n</del>$为不等于$<del>0,1</del>$的实数。解方程可采用下面的方法：先以$<del>y^n</del>$除方程的两边，得到<br>$$<br>y^{-n}\frac{\mathrm{d}y}{\mathrm{d}x} + P(x)y^{1-n} &#x3D; Q(x)<br>$$<br>再作代换$<del>u &#x3D; y^{1-n}</del>$，则方程化为线性方程<br>$$<br>\frac{\mathrm{d}u}{\mathrm{d}x} + (1-n)P(x)u &#x3D; (1-n)Q(x)<br>$$<br>由此就容易求出方程的通解。</p>
+<font face='KaiTi_GB2312'>
+
+<h3 id="可降阶微分方程"><a href="#可降阶微分方程" class="headerlink" title="可降阶微分方程"></a>可降阶微分方程</h3></font>
+
+<p>一般的二阶微分方程的形式是<br>$$<br>F(x,y,y^\prime,y^{\prime\prime}) &#x3D; 0<br>$$</p>
+<p>不显含未知函数<br>若方程不显含未知函数$<del>y</del>$，则可写为<br>$$<br>f(x,y^\prime,y^{\prime\prime}) &#x3D; 0<br>$$<br>令$<del>p &#x3D; y^\prime</del>$，则$<del>y^{\prime\prime} &#x3D; \frac{\mathrm{d}p}{\mathrm{d}x}</del>$。此时方程化为一阶方程<br>$$<br>f\left(x,p,\frac{\mathrm{d}p}{\mathrm{d}x}\right) &#x3D; 0<br>$$<br>通过求解两次一阶微分方程可解出原方程。</p>
+<p>不显含自变量<br>若方程不显含自变量$<del>x</del>$，则方程可写为<br>$$<br>g(y,y^\prime,y^{\prime\prime}) &#x3D; 0<br>$$<br>令$<del>p &#x3D; y^\prime</del>$，则<br>$$<br>y^{\prime\prime} &#x3D; \frac{\mathrm{d}p}{\mathrm{d}x} &#x3D; \frac{\mathrm{d}p}{\mathrm{d}y}\frac{\mathrm{d}y}{\mathrm{d}x} &#x3D; p\frac{\mathrm{d}p}{\mathrm{d}y}<br>$$<br>于是方程可写为<br>$$<br>g\left(y,p,p\frac{\mathrm{d}p}{\mathrm{d}y}\right) &#x3D; 0<br>$$<br>通过求解两次一阶微分方程可解出原方程。</p>
+<font face='KaiTi_GB2312'>
+
+<h2 id="二阶微分方程"><a href="#二阶微分方程" class="headerlink" title="二阶微分方程"></a>二阶微分方程</h2><h3 id="二阶常系数齐次线性微分方程"><a href="#二阶常系数齐次线性微分方程" class="headerlink" title="二阶常系数齐次线性微分方程"></a>二阶常系数齐次线性微分方程</h3></font>
+
+<p>二阶常系数齐次线性微分方程可以写为一般形式<br>$$<br>y^{\prime\prime} + py^\prime + qy &#x3D; 0<br>$$<br>其中$<del>p,q</del>$是实常数。假设方程有形如$<del>y(x) &#x3D; e^{\lambda x}</del>$（$<del>\lambda</del>$是待定常数）的解，则有<br>$$<br>\lambda^2 e^{\lambda x} + \lambda p e^{\lambda x} + qe^{\lambda x} &#x3D; 0<br>$$<br>因而<br>$$<br>\lambda^2 + p\lambda + q &#x3D; 0<br>$$<br>此方程称为原方程的特征方程。因此，只要$<del>\lambda</del>$是特征方程的一个根，就对应二阶常系数线性方程的一个解$<del>y &#x3D; e^{\lambda x}</del>$. 根据特征方程求根问题的特性，分以下三种情况讨论：</p>
+<p>特征方程有两个不同的实根$<del>\lambda_1,\lambda_2</del>$.<br>此时，$<del>y_1(x) &#x3D; e^{\lambda_1 x},y_2(x) &#x3D; e^{\lambda_2 x}</del>$是原方程的解。此时通解为<br>$$<br>y(x) &#x3D; c_1 e^{\lambda_1 x} + c_2 e^{\lambda_2 x}<br>$$</p>
+<p>特征方程有一对复根$<del>\lambda_1 &#x3D; \alpha + \mathrm{i}\beta,</del>\lambda_2 &#x3D; \alpha - \mathrm{i}\beta<del>$.<br>此时方程$</del>y_1(x) &#x3D; e^{\lambda_1 x},y_2(x) &#x3D; e^{\lambda_2 x}<del>$仍然是解，不过是一对复函数解。为了得到实函数的解，由$</del>\mathrm{Euler}~$公式有<br>$$<br>e^{\lambda_1 x} &#x3D; (\cos\beta x + \mathrm{i}\sin\beta x)e^{\alpha x},<del>e^{\lambda_2 x} &#x3D; (\cos\beta x - \mathrm{i}\sin\beta x)e^{\alpha x}<br>$$<br>根据方程解满足线性性可知<br>$$<br>e^{\alpha x}\cos\beta x &#x3D; \frac{e^{\lambda_1 x} + e^{\lambda_2 x}}{2},</del>e^{\alpha x}\sin\beta x &#x3D; \frac{e^{\lambda_1 x} - e^{\lambda_2 x}}{2\mathrm{i}}<br>$$<br>是原方程的两个实函数解而且线性无关，因此构成原方程实函数的基本解组。于是原方程的通解为<br>$$<br>y(x) &#x3D; (c_1 \cos \beta x + c_2\sin \beta x)e^{\alpha x}<br>$$</p>
+<p>特征方程有一个实重根$<del>\lambda</del>$.<br>此时$<del>y_1(x) &#x3D; e^{\lambda x}</del>$是原方程的解。容易验证，方程$<del>y_2(x) &#x3D; xe^{\lambda x}</del>$也是原方程的解，它与$<del>y_1</del>$线性无关。于是原方程的通解为<br>$$<br>y(x) &#x3D; c_1 e^{\lambda x} + c_2 x e^{\lambda x}<br>$$</p>
+<font face='KaiTi_GB2312'>
+
+<h3 id="二阶常系数非齐次线性微分方程的特解"><a href="#二阶常系数非齐次线性微分方程的特解" class="headerlink" title="二阶常系数非齐次线性微分方程的特解"></a>二阶常系数非齐次线性微分方程的特解</h3></font>
+
+<p>二阶常系数非齐次线性微分方程可写为如下一般形式<br>$$<br>y^{\prime\prime} + py^\prime + q &#x3D; f(x)<br>$$</p>
+<p>$<del>f(x)</del>$的形式为$<del>P(x)e^{\lambda x}</del>$型。$<del>P(x)</del>$是关于$<del>x</del>$的多项式，$<del>\lambda</del>$可以为零。<br>则方程的解有如下形式<br>$$<br>y(x) &#x3D; x^{k}Q(x)e^{\lambda x}<br>$$<br>其中$<del>Q(x)</del>$是和$<del>P(x)</del>$有着同样形式的多项式。例如$<del>P(x) &#x3D; x^2 + 2x</del>$，则$<del>Q(x) &#x3D; ax^2 + bx + c</del>$（$<del>a,b,c</del>$为待定系数）。</p>
+<p>若$<del>\lambda</del>$不是特征根，则$<del>k &#x3D; 0,</del>y(x) &#x3D; Q(x)e^{\lambda x}<del>$.<br>若$</del>\lambda<del>$是一重根，则$</del>k &#x3D; 1,<del>y &#x3D; xQ(x)e^{\lambda x}</del>$.<br>若$<del>\lambda</del>$是二重根，则$<del>k &#x3D; 2,</del>y &#x3D; x^2 Q(x) e^{\lambda x}~$.</p>
+<p>$<del>f(x)</del>$的形式为$<del>e^{\lambda x}P(x)\cos(\beta x)</del>$或$<del>e^{\lambda x}P(x)\sin(\beta x )</del>$型。</p>
+<p>若$<del>\alpha + \beta \mathrm{i}</del>$不是特征根，则解的形式为<br>$$<br>y(x) &#x3D; e^{\lambda x}Q(x)(A\cos\beta x + B\sin\beta x)<br>$$</p>
+<p>若$<del>\alpha + \beta \mathrm{i}</del>$是特征根，则解的形式为<br>$$<br>y(x) &#x3D; xe^{\lambda x}Q(x)(A\cos\beta x + B\sin\beta x)<br>$$</p>
+<p>将特解的形式带入原方程，可以解出待定常数$<del>A,B</del>$，由此可得到特解。而二阶常系数非齐次线性微分方程的通解，则可以由对应的齐次方程的通解加上非齐次方程的一个特解得到。</p>
+</font></article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>Author: </span><span class="post-copyright-info"><a target="_blank" rel="noopener" href="http://jiming.site">Axeho</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>Link: </span><span class="post-copyright-info"><a target="_blank" rel="noopener" href="http://home.ustc.edu.cn/~zhengjiming/2020/05/16/elementary-ode/">http://home.ustc.edu.cn/~zhengjiming/2020/05/16/elementary-ode/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>Copyright Notice: </span><span class="post-copyright-info">All articles in this blog are licensed under CC BY-NC-SA 4.0 unless stating additionally.</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/Mathematics/">Mathematics</a><a class="post-meta__tags" href="/tags/Physics/">Physics</a></div><div class="post_share"><div class="social-share" data-image="/img/calculation.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-full"><a href="/2021/05/29/the_War_of_Resistance/" title="The Sichuan Army in the War of Resistance - the 22nd Group Army of the National Revolutionary Army"><img class="cover" src="/img/literature/map.jpeg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">Previous</div><div class="prev_info">The Sichuan Army in the War of Resistance - the 22nd Group Army of the National Revolutionary Army</div></div></a></div></nav><hr class="custom-hr"/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> Comment</span></div></div><div class="comment-wrap"><div><div id="waline-wrap"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/avatar.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">AYIN</div><div class="author-info__description"></div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">7</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">5</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">3</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/Bessgendre"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/Bessgendre" target="_blank" title="Github"><i class="fab fa-github" style="color: #24292e;"></i></a><a class="social-icon" href="mailto:xuankecai@gmail.com" target="_blank" title="Email"><i class="fas fa-envelope" style="color: #4a7dbe;"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>Announcement</span></div><div class="announcement_content">τὸ τί ἦν εἶναι</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>Contents</span><span class="toc-percentage"></span></div><div class="toc-content is-expand"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E9%98%B6%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B"><span class="toc-text">一阶微分方程</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%86%E7%A6%BB%E5%8F%98%E9%87%8F%E6%B3%95"><span class="toc-text">分离变量法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%BD%90%E6%AC%A1%E6%96%B9%E7%A8%8B"><span class="toc-text">齐次方程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%80%E9%98%B6%E7%BA%BF%E6%80%A7%E6%96%B9%E7%A8%8B"><span class="toc-text">一阶线性方程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%AF%E9%99%8D%E9%98%B6%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B"><span class="toc-text">可降阶微分方程</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C%E9%98%B6%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B"><span class="toc-text">二阶微分方程</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%8C%E9%98%B6%E5%B8%B8%E7%B3%BB%E6%95%B0%E9%BD%90%E6%AC%A1%E7%BA%BF%E6%80%A7%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B"><span class="toc-text">二阶常系数齐次线性微分方程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%8C%E9%98%B6%E5%B8%B8%E7%B3%BB%E6%95%B0%E9%9D%9E%E9%BD%90%E6%AC%A1%E7%BA%BF%E6%80%A7%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B%E7%9A%84%E7%89%B9%E8%A7%A3"><span class="toc-text">二阶常系数非齐次线性微分方程的特解</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>Recent Post</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2022/10/29/The_Analysis_of_USTC/" title="The Analysis of USTC"><img src="/img/literature/convolution.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="The Analysis of USTC"/></a><div class="content"><a class="title" href="/2022/10/29/The_Analysis_of_USTC/" title="The Analysis of USTC">The Analysis of USTC</a><time datetime="2022-10-29T05:00:00.000Z" title="Created 2022-10-29 00:00:00">2022-10-29</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/01/11/The_Faults_of_Zhiyong/" title="The Faults of Zhiyong"><img src="/img/literature/faults.webp" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="The Faults of Zhiyong"/></a><div class="content"><a class="title" href="/2022/01/11/The_Faults_of_Zhiyong/" title="The Faults of Zhiyong">The Faults of Zhiyong</a><time datetime="2022-01-11T06:00:00.000Z" title="Created 2022-01-11 00:00:00">2022-01-11</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/12/29/Calculation_Method/" title="An Calculation Method Modified by Symbolic Computation in Analytical Chemistry"><img src="https://pica.zhimg.com/v2-a49add4947277419265c182d8b835d36_720w.jpg?source=d16d100b" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="An Calculation Method Modified by Symbolic Computation in Analytical Chemistry"/></a><div class="content"><a class="title" href="/2021/12/29/Calculation_Method/" title="An Calculation Method Modified by Symbolic Computation in Analytical Chemistry">An Calculation Method Modified by Symbolic Computation in Analytical Chemistry</a><time datetime="2021-12-29T16:20:12.000Z" title="Created 2021-12-29 10:20:12">2021-12-29</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/12/05/Theology/" title="Some Questions about The Theology"><img src="/img/literature/theology.jpeg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Some Questions about The Theology"/></a><div class="content"><a class="title" href="/2021/12/05/Theology/" title="Some Questions about The Theology">Some Questions about The Theology</a><time datetime="2021-12-05T06:00:00.000Z" title="Created 2021-12-05 00:00:00">2021-12-05</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/10/22/The_Analysis_of_Time/" title="The Analysis of Time"><img src="/img/literature/time.jpeg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="The Analysis of Time"/></a><div class="content"><a class="title" href="/2021/10/22/The_Analysis_of_Time/" title="The Analysis of Time">The Analysis of Time</a><time datetime="2021-10-22T05:00:00.000Z" title="Created 2021-10-22 00:00:00">2021-10-22</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2022 - 2023 By AYIN</div><div class="framework-info"><span>Framework </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>Theme </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="Read Mode"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="Toggle Between Light And Dark Mode"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="Toggle between Single-column and Double-column"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="Setting"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="Table Of Contents"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="Scroll To Comments"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="Back To Top"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"><script>(() => {
+  const initWaline = () => {
+    const waline = Waline.init(Object.assign({
+      el: '#waline-wrap',
+      serverURL: 'https://blog-comments-five.vercel.app',
+      pageview: false,
+      dark: 'html[data-theme="dark"]',
+      path: window.location.pathname,
+      comment: false,
+    }, null))
+  }
+
+  const loadWaline = async () => {
+    if (typeof Waline === 'object') initWaline()
+    else {
+      await getCSS('https://cdn.jsdelivr.net/npm/@waline/client/dist/waline.min.css')
+      await getScript('https://cdn.jsdelivr.net/npm/@waline/client/dist/waline.min.js')
+      initWaline()
+    }
+  }
+
+  if ('Waline' === 'Waline' || !false) {
+    if (false) btf.loadComment(document.getElementById('waline-wrap'),loadWaline)
+    else setTimeout(loadWaline, 0)
+  } else {
+    window.loadOtherComment = loadWaline
+  }
+})()</script></div><script defer="defer" id="fluttering_ribbon" mobile="false" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/canvas-fluttering-ribbon.min.js"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>

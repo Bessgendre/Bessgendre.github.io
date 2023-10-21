@@ -1,0 +1,320 @@
+<!DOCTYPE html><html lang="en" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>Quantum Mechanics III - Wave Particle Duality | LUMINESCENCE</title><meta name="author" content="AYIN"><meta name="copyright" content="AYIN"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="再论波粒二象性回顾&amp;emsp;&amp;emsp;重新审视我们为杨氏双缝干涉实验提出的质疑：  这些电子是从哪条缝穿过去的？  在第一节中，我们给出的“正确”答案是：“每个电子都是从两条缝同时传过去的，电子所处状态是两条路径的相干叠加。若进行哪一条路的测量，则必向其中一条坍缩，原则上无法分辨就会发生双态间的干涉。” &amp;emsp;&amp;emsp;然而，在我们的印象中，电子应是一个局域性的东西。说一个局域性">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Quantum Mechanics III - Wave Particle Duality">
+<meta property="og:url" content="https://bessgendre.github.io/Quan_III_Duality.html">
+<meta property="og:site_name" content="LUMINESCENCE">
+<meta property="og:description" content="再论波粒二象性回顾&amp;emsp;&amp;emsp;重新审视我们为杨氏双缝干涉实验提出的质疑：  这些电子是从哪条缝穿过去的？  在第一节中，我们给出的“正确”答案是：“每个电子都是从两条缝同时传过去的，电子所处状态是两条路径的相干叠加。若进行哪一条路的测量，则必向其中一条坍缩，原则上无法分辨就会发生双态间的干涉。” &amp;emsp;&amp;emsp;然而，在我们的印象中，电子应是一个局域性的东西。说一个局域性">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://home.ustc.edu.cn/~ustcxkc/img/quantum/duality.png">
+<meta property="article:published_time" content="2022-09-15T05:00:00.000Z">
+<meta property="article:modified_time" content="2022-09-15T05:00:00.000Z">
+<meta property="article:author" content="AYIN">
+<meta property="article:tag" content="Philosophy">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://home.ustc.edu.cn/~ustcxkc/img/quantum/duality.png"><link rel="shortcut icon" href="/img/avatar.jpg"><link rel="canonical" href="https://bessgendre.github.io/Quan_III_Duality.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: 'Copy Successful',
+    error: 'Copy Error',
+    noSupport: 'Browser Not Supported'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: 'Just now',
+    min: 'minutes ago',
+    hour: 'hours ago',
+    day: 'days ago',
+    month: 'months ago'
+  },
+  copyright: {"limitCount":50,"languages":{"author":"Author: AYIN","link":"Link: ","source":"Source: LUMINESCENCE","info":"Copyright is owned by the author. For commercial reprints, please contact the author for authorization. For non-commercial reprints, please indicate the source."}},
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid/dist/infinitegrid.min.js',
+    buttonText: 'Load More'
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: true,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'Quantum Mechanics III - Wave Particle Duality',
+  isPost: false,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: false,
+  postUpdate: '2022-09-15 00:00:00'
+}</script><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+    
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
+
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
+
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
+    
+      win.activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+        if (t === 'dark') activateDarkMode()
+        else if (t === 'light') activateLightMode()
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.3.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/avatar.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">7</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">5</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">3</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> Link</span></a></div><div class="menus_item"><a class="site-page" href="/download/"><i class="fa-fw fas fa-download"></i><span> Download</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div></div></div><div class="page" id="body-wrap"><header class="not-home-page" id="page-header" style="background: #1772b4"><nav id="nav"><span id="blog-info"><a href="/" title="LUMINESCENCE"><span class="site-name">LUMINESCENCE</span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> Link</span></a></div><div class="menus_item"><a class="site-page" href="/download/"><i class="fa-fw fas fa-download"></i><span> Download</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="page-site-info"><h1 id="site-title">Quantum Mechanics III - Wave Particle Duality</h1></div></header><main class="layout" id="content-inner"><div id="page"><div id="article-container"><font size="4">
+<font face='KaiTi_GB2312'>
+
+<h2 id="再论波粒二象性"><a href="#再论波粒二象性" class="headerlink" title="再论波粒二象性"></a>再论波粒二象性</h2><h3 id="回顾"><a href="#回顾" class="headerlink" title="回顾"></a>回顾</h3><p>&emsp;&emsp;重新审视我们为杨氏双缝干涉实验提出的质疑：</p>
+<blockquote>
+<p><em>这些电子是从哪条缝穿过去的？</em></p>
+</blockquote>
+<p>在第一节中，我们给出的“正确”答案是：“<em>每个电子都是从两条缝同时传过去的，电子所处状态是两条路径的相干叠加。若进行哪一条路的测量，则必向其中一条坍缩，原则上无法分辨就会发生双态间的干涉。</em>”</p>
+<p>&emsp;&emsp;然而，在我们的印象中，电子应是一个局域性的东西。说一个局域性的东西可以同时出现在两个相隔有一些距离的地方，是非常矛盾的。</p>
+<p>&emsp;&emsp;对于这个质疑，许多教科书以及教授量子力学的老师，为了说明“电子的确从两条缝中同时穿过”这件事，都不约而同地批判了这种经典力学下的观点：</p>
+<blockquote>
+<p><em>“波粒二象性是微观粒子的内禀性质”</em></p>
+<p>&emsp;&emsp;——Yijing Yan, Quantum Physics (EN), 2022 Autumn, USTC</p>
+</blockquote>
+<p>或者 Ira N. Levine：</p>
+<blockquote>
+<p><em>Evolution has shaped the human brain to allow it to understand and deal effectively with macroscopic phenomena. The human nervous system was not developed to deal with phenomena at the atomic and molecular level, so it is not surprising if we cannot fully understand such phenomena.</em></p>
+<p>&emsp;&emsp;——Ira N. Levine, Quantum Chemistry, the Seventh Edition</p>
+</blockquote>
+<p>&emsp;&emsp;总之，引用这些语句的指向，都是传统的经典力学观点，并基于实验事实来给出了非常霸道的反驳，学生的思考到此为止，只能将这样的矛盾放在一旁，SHUT UP AND CALCULATE，而消解了 <strong>阐明真理</strong> 的重要性。</p>
+<h3 id="对问题的分析"><a href="#对问题的分析" class="headerlink" title="对问题的分析"></a>对问题的分析</h3><p>&emsp;&emsp;要想为这个问题作出一个不同的解答，首先要对这个问题中使用的概念进行还原和分析。</p>
+<blockquote>
+<p><em>这些电子是从哪条缝穿过去的？</em></p>
+</blockquote>
+<p>&emsp;&emsp;电子，electron。将它分成electr-on 来看，electric 表示它带<strong>电</strong>——能过吸引轻小物体，能够其他带电体产生库伦相互作用：<br>$$<br>    \vec{F} &#x3D; k\frac{Q_1Q_2}{r^3}\vec{r}<br>$$<br>注意，上式是“<strong>点</strong>电荷”与周围带电体之间的库伦相互作用。而 on 的含义为“子”，是粒子，是一个<strong>点</strong>。所以我们使用“电子”这个概念指代存在于那个在原子核周围的带电体时，我们已经先验地为它赋予了“粒子”的样貌。</p>
+<p>&emsp;&emsp;从哪里穿过，“穿”这个词表明我们先验地认为它具有某种“轨迹”（trajectory），然后才能询问它的轨迹“经过”何处，这是一个关于“位置”的问题。</p>
+<p>然而，对于 trajectory 这个词，它的含义是这样的：</p>
+<blockquote>
+<p>A solution to Newton’s law is called trajectory.</p>
+<p>&emsp;&emsp;——Brian C. Hall, Quantum Theory for Mathematicians</p>
+</blockquote>
+<p>还是和经典力学有密不可分的联系（所以现在原子轨道分子轨道的“轨道”一词的英文单词为 orbital）。</p>
+<p>&emsp;&emsp;由此我们可以看到，这个问题使用的概念，是经典的质点模型和经典的动力学方程，是<strong>我们的经典思维模式的规定迫使我们提出了这样一个问题</strong>。然而，没有合乎逻辑的理由说明为什么牛顿力学的原理以及其他的经典原理，在它们被实验证实的领域之外依然成立：</p>
+<blockquote>
+<p><em>人们终于意识到，背离这些原理是必要的，通过向理论物理的方法中引入新的数学形式（新的公理体系与运算规则）这种背景得到了它们的表达方式。</em></p>
+<p>&emsp;&emsp;——Dirac, The Principles of Quantum Mechanics</p>
+</blockquote>
+<p>&emsp;&emsp;所以我们有必要另外使用一种不那么依赖经典的语言来描述这些新的物理现象——这不仅是引入 Hilbert 空间、定义左矢右矢或者其他的什么数学物理上的方法能够做到的，我们必须翻新一下所使用的 <strong>概念</strong> ，因为我们是通过概念和它们的相互联系来理解这个世界的，而经典概念与诸多实验的矛盾表明，它们已经不再适用于量子力学了。</p>
+<blockquote>
+<p><em>这里我们有一个经典力学失败的一个很惊人而又普遍的例子——不仅它的运动规律不准确，而且它的概念不足以对原子事件进行描述。</em></p>
+<p>&emsp;&emsp;——Dirac, The Principles of Quantum Mechanics</p>
+</blockquote>
+<p>&emsp;&emsp;这样看来，量子力学更是一场概念的革命。</p>
+<h3 id="大（big）和小（small）"><a href="#大（big）和小（small）" class="headerlink" title="大（big）和小（small）"></a>大（big）和小（small）</h3><p>&emsp;&emsp;物质有没有一个终极结构？</p>
+<p>&emsp;&emsp;在物质组成的经典解释中，人们假定物质是由大量小的组成部分所构成，并且要对这些组成部分的行为做出假设，从而推导出整体物质的一些规律。但是，这将无法完成解释，因为构造的问题和组成部分的稳定性都没有触及。要深入探讨这个问题，必须假定每个组成部分本身是由更小的部分组成，并用这些更小的部分来解释它的行为。</p>
+<p>&emsp;&emsp;这样的过程显然没有尽头，沿着这样的方向人们永远无法到达物质的终极结构。只要 <strong>大</strong> 和 <strong>小</strong> 仅仅是两个相对的概念，那么用小无助于解释大。因而有必要用某种方法来修改经典思想，而<strong>这种方法能给大小以绝对的含义</strong>。</p>
+<p>&emsp;&emsp;要想观测一个对象，只有让它与某种外部的影响互相作用。因而观测的动作必然伴随着对观测现象的某种干扰。当伴随观测的扰动可以忽略，我们就定义这个观测对象是大的；而当扰动不可忽略，就定义这个观测对象是小的。这一定义与通常意义下的大和小相一致。</p>
+<p>&emsp;&emsp;然而，经典，或者说经验而言，只要足够小心，总能把伴随于观测的扰动降低到任意想要的程度，这样一来大于小的概念纯粹是相对的——相对于实验者的“小心”程度。</p>
+<p>&emsp;&emsp;所以，为了给大小以绝对的含义，我们必须假设： <em><strong>观测能力的精确程度以及与其相伴的扰动的微小程度都有一个限度——这个限度是事物本质中固有的，无法通过提高观测技术来超越这一限度。</strong></em></p>
+<p>&emsp;&emsp;如果被观测的对象足够大，可以忽略这种无法避免的扰动，那么这一对象在绝对意义下是大的，可以用经典力学来处理它。反之，如果这种有限度的扰动不可以忽略，观测对象在绝对意义下是小的，需要用新的理论来处理它，这样的理论，就是量子力学。</p>
+<p>&emsp;&emsp;乍看一眼，这样的讨论没有什么必要的价值，因为它和我们经验上的大和经验上的小似乎并没有什么区别：汽车比较大、一本书比较大、一只猫也挺大的——观测起来很容易；一个细胞比较小、一个病毒比较小、一个蛋白质比较小——观测起来很困难。</p>
+<p>&emsp;&emsp;然而，对概念的革新，是为了推而广之，用新的概念来解读这个世界。这种新的“大小观”和我们的经验之间存在的一个明显区别是：“大小”概念的指认和事物的<strong>空间广延</strong>程度无关，这将会为双缝干涉实验和Mach-Zehnder实验带来新的理解。</p>
+</font>
+</font></div><hr class="custom-hr"/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> Comment</span></div></div><div class="comment-wrap"><div><div id="waline-wrap"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/avatar.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">AYIN</div><div class="author-info__description"></div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">7</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">5</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">3</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/Bessgendre"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/Bessgendre" target="_blank" title="Github"><i class="fab fa-github" style="color: #24292e;"></i></a><a class="social-icon" href="mailto:xuankecai@gmail.com" target="_blank" title="Email"><i class="fas fa-envelope" style="color: #4a7dbe;"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>Announcement</span></div><div class="announcement_content">τὸ τί ἦν εἶναι</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>Recent Post</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2022/10/29/The_Analysis_of_USTC/" title="The Analysis of USTC"><img src="/img/literature/convolution.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="The Analysis of USTC"/></a><div class="content"><a class="title" href="/2022/10/29/The_Analysis_of_USTC/" title="The Analysis of USTC">The Analysis of USTC</a><time datetime="2022-10-29T05:00:00.000Z" title="Created 2022-10-29 00:00:00">2022-10-29</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/01/11/The_Faults_of_Zhiyong/" title="The Faults of Zhiyong"><img src="/img/literature/faults.webp" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="The Faults of Zhiyong"/></a><div class="content"><a class="title" href="/2022/01/11/The_Faults_of_Zhiyong/" title="The Faults of Zhiyong">The Faults of Zhiyong</a><time datetime="2022-01-11T06:00:00.000Z" title="Created 2022-01-11 00:00:00">2022-01-11</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/12/29/Calculation_Method/" title="An Calculation Method Modified by Symbolic Computation in Analytical Chemistry"><img src="https://pica.zhimg.com/v2-a49add4947277419265c182d8b835d36_720w.jpg?source=d16d100b" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="An Calculation Method Modified by Symbolic Computation in Analytical Chemistry"/></a><div class="content"><a class="title" href="/2021/12/29/Calculation_Method/" title="An Calculation Method Modified by Symbolic Computation in Analytical Chemistry">An Calculation Method Modified by Symbolic Computation in Analytical Chemistry</a><time datetime="2021-12-29T16:20:12.000Z" title="Created 2021-12-29 10:20:12">2021-12-29</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/12/05/Theology/" title="Some Questions about The Theology"><img src="/img/literature/theology.jpeg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Some Questions about The Theology"/></a><div class="content"><a class="title" href="/2021/12/05/Theology/" title="Some Questions about The Theology">Some Questions about The Theology</a><time datetime="2021-12-05T06:00:00.000Z" title="Created 2021-12-05 00:00:00">2021-12-05</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/10/22/The_Analysis_of_Time/" title="The Analysis of Time"><img src="/img/literature/time.jpeg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="The Analysis of Time"/></a><div class="content"><a class="title" href="/2021/10/22/The_Analysis_of_Time/" title="The Analysis of Time">The Analysis of Time</a><time datetime="2021-10-22T05:00:00.000Z" title="Created 2021-10-22 00:00:00">2021-10-22</time></div></div></div></div><div class="card-widget" id="card-newest-comments"><div class="item-headline"><i class="fas fa-comment-dots"></i><span>Latest Comments</span></div><div class="aside-list"><span>loading...</span></div></div><div class="card-widget card-categories"><div class="item-headline">
+            <i class="fas fa-folder-open"></i>
+            <span>Categories</span>
+            
+            </div>
+            <ul class="card-category-list" id="aside-cat-list">
+            <li class="card-category-list-item "><a class="card-category-list-link" href="/categories/LITERATURE/"><span class="card-category-list-name">LITERATURE</span><span class="card-category-list-count">5</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/NOTES/"><span class="card-category-list-name">NOTES</span><span class="card-category-list-count">1</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/THESIS/"><span class="card-category-list-name">THESIS</span><span class="card-category-list-count">1</span></a></li>
+            </ul></div><div class="card-widget card-tags"><div class="item-headline"><i class="fas fa-tags"></i><span>Tags</span></div><div class="card-tag-cloud"><a href="/tags/Chemistry/" style="font-size: 1.3em; color: rgb(101, 174, 145)">Chemistry</a><a href="/tags/Mathematics/" style="font-size: 1.15em; color: rgb(78, 55, 44)">Mathematics</a><a href="/tags/Physics/" style="font-size: 1.15em; color: rgb(192, 98, 135)">Physics</a><a href="/tags/Philosophy/" style="font-size: 1.45em; color: rgb(17, 28, 83)">Philosophy</a><a href="/tags/History/" style="font-size: 1.15em; color: rgb(116, 17, 163)">History</a></div></div><div class="card-widget card-archives"><div class="item-headline"><i class="fas fa-archive"></i><span>Archives</span></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2022/10/"><span class="card-archive-list-date">October 2022</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2022/01/"><span class="card-archive-list-date">January 2022</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2021/12/"><span class="card-archive-list-date">December 2021</span><span class="card-archive-list-count">2</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2021/10/"><span class="card-archive-list-date">October 2021</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2021/05/"><span class="card-archive-list-date">May 2021</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2020/05/"><span class="card-archive-list-date">May 2020</span><span class="card-archive-list-count">1</span></a></li></ul></div><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>Info</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">Article :</div><div class="item-count">7</div></div><div class="webinfo-item"><div class="item-name">UV :</div><div class="item-count" id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">PV :</div><div class="item-count" id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">Last Update :</div><div class="item-count" id="last-push-date" data-lastPushDate="2023-10-21T03:12:20.805Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2022 - 2023 By AYIN</div><div class="framework-info"><span>Framework </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>Theme </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="darkmode" type="button" title="Toggle Between Light And Dark Mode"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="Toggle between Single-column and Double-column"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="Setting"><i class="fas fa-cog fa-spin"></i></button><a id="to_comment" href="#post-comment" title="Scroll To Comments"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="Back To Top"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"><script>(() => {
+  const initWaline = () => {
+    const waline = Waline.init(Object.assign({
+      el: '#waline-wrap',
+      serverURL: 'https://blog-comments-five.vercel.app',
+      pageview: false,
+      dark: 'html[data-theme="dark"]',
+      path: window.location.pathname,
+      comment: false,
+    }, null))
+  }
+
+  const loadWaline = async () => {
+    if (typeof Waline === 'object') initWaline()
+    else {
+      await getCSS('https://cdn.jsdelivr.net/npm/@waline/client/dist/waline.min.css')
+      await getScript('https://cdn.jsdelivr.net/npm/@waline/client/dist/waline.min.js')
+      initWaline()
+    }
+  }
+
+  if ('Waline' === 'Waline' || !false) {
+    if (false) btf.loadComment(document.getElementById('waline-wrap'),loadWaline)
+    else setTimeout(loadWaline, 0)
+  } else {
+    window.loadOtherComment = loadWaline
+  }
+})()</script></div><script>window.addEventListener('load', () => {
+  const changeContent = content => {
+    if (content === '') return content
+
+    content = content.replace(/<img.*?src="(.*?)"?[^\>]+>/ig, '[image]') // replace image link
+    content = content.replace(/<a[^>]+?href=["']?([^"']+)["']?[^>]*>([^<]+)<\/a>/gi, '[link]') // replace url
+    content = content.replace(/<pre><code>.*?<\/pre>/gi, '[code]') // replace code
+    content = content.replace(/<[^>]+>/g,"") // remove html tag
+
+    if (content.length > 150) {
+      content = content.substring(0,150) + '...'
+    }
+    return content
+  }
+
+  const generateHtml = array => {
+    let result = ''
+
+    if (array.length) {
+      for (let i = 0; i < array.length; i++) {
+        result += '<div class=\'aside-list-item\'>'
+
+        if (true) {
+          const name = 'src'
+          result += `<a href='${array[i].url}' class='thumbnail'><img ${name}='${array[i].avatar}' alt='${array[i].nick}'></a>`
+        }
+
+        result += `<div class='content'>
+        <a class='comment' href='${array[i].url}' title='${array[i].content}'>${array[i].content}</a>
+        <div class='name'><span>${array[i].nick} / </span><time datetime="${array[i].date}">${btf.diffDate(array[i].date, true)}</time></div>
+        </div></div>`
+      }
+    } else {
+      result += 'No comments'
+    }
+
+    let $dom = document.querySelector('#card-newest-comments .aside-list')
+    $dom.innerHTML= result
+    window.lazyLoadInstance && window.lazyLoadInstance.update()
+    window.pjax && window.pjax.refresh($dom)
+  }
+
+  const getComment = async () => {
+    try {
+      const res = await fetch('https://blog-comments-five.vercel.app/api/comment?type=recent&count=6', { method: 'GET' })
+      const result = await res.json()
+      const walineArray = result.data.map(e => {
+        return {
+          'content': changeContent(e.comment),
+          'avatar': e.avatar,
+          'nick': e.nick,
+          'url': e.url + '#' + e.objectId,
+          'date': e.time || e.insertedAt
+        }
+      })
+      saveToLocal.set('waline-newest-comments', JSON.stringify(walineArray), 10/(60*24))
+      generateHtml(walineArray)
+    } catch (err) {
+      console.error(err)
+      const $dom = document.querySelector('#card-newest-comments .aside-list')
+      $dom.textContent= "Unable to retrieve comments, please check the configuration"
+    }
+  }
+
+  const newestCommentInit = () => {
+    if (document.querySelector('#card-newest-comments .aside-list')) {
+      const data = saveToLocal.get('waline-newest-comments')
+      if (data) {
+        generateHtml(JSON.parse(data))
+      } else {
+        getComment()
+      }
+    }
+  }
+
+  newestCommentInit()
+  document.addEventListener('pjax:complete', newestCommentInit)
+})</script><script defer="defer" id="fluttering_ribbon" mobile="false" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/canvas-fluttering-ribbon.min.js"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>

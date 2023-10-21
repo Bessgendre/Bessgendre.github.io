@@ -1,0 +1,335 @@
+<!DOCTYPE html><html lang="en" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>Quantum Mechanics II - Dirac Representation Theory | LUMINESCENCE</title><meta name="author" content="AYIN"><meta name="copyright" content="AYIN"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="Introduction&amp;emsp;&amp;emsp;This note, as a part of my Quantum Mechanics note series, is especially taken when learning Dirac’s symbles and the interesting festure of representation invariance. Some co">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Quantum Mechanics II - Dirac Representation Theory">
+<meta property="og:url" content="https://bessgendre.github.io/Quan_II_Representation.html">
+<meta property="og:site_name" content="LUMINESCENCE">
+<meta property="og:description" content="Introduction&amp;emsp;&amp;emsp;This note, as a part of my Quantum Mechanics note series, is especially taken when learning Dirac’s symbles and the interesting festure of representation invariance. Some co">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://home.ustc.edu.cn/~ustcxkc/img/quantum/representation.png">
+<meta property="article:published_time" content="2022-09-01T05:00:00.000Z">
+<meta property="article:modified_time" content="2022-09-05T05:00:00.000Z">
+<meta property="article:author" content="AYIN">
+<meta property="article:tag" content="Physics">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://home.ustc.edu.cn/~ustcxkc/img/quantum/representation.png"><link rel="shortcut icon" href="/img/avatar.jpg"><link rel="canonical" href="https://bessgendre.github.io/Quan_II_Representation.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: 'Copy Successful',
+    error: 'Copy Error',
+    noSupport: 'Browser Not Supported'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: 'Just now',
+    min: 'minutes ago',
+    hour: 'hours ago',
+    day: 'days ago',
+    month: 'months ago'
+  },
+  copyright: {"limitCount":50,"languages":{"author":"Author: AYIN","link":"Link: ","source":"Source: LUMINESCENCE","info":"Copyright is owned by the author. For commercial reprints, please contact the author for authorization. For non-commercial reprints, please indicate the source."}},
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid/dist/infinitegrid.min.js',
+    buttonText: 'Load More'
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: true,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'Quantum Mechanics II - Dirac Representation Theory',
+  isPost: false,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: false,
+  postUpdate: '2022-09-05 00:00:00'
+}</script><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+    
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
+
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
+
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
+    
+      win.activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+        if (t === 'dark') activateDarkMode()
+        else if (t === 'light') activateLightMode()
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.3.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/avatar.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">7</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">5</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">3</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> Link</span></a></div><div class="menus_item"><a class="site-page" href="/download/"><i class="fa-fw fas fa-download"></i><span> Download</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div></div></div><div class="page" id="body-wrap"><header class="not-home-page" id="page-header" style="background: #1772b4"><nav id="nav"><span id="blog-info"><a href="/" title="LUMINESCENCE"><span class="site-name">LUMINESCENCE</span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> Link</span></a></div><div class="menus_item"><a class="site-page" href="/download/"><i class="fa-fw fas fa-download"></i><span> Download</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="page-site-info"><h1 id="site-title">Quantum Mechanics II - Dirac Representation Theory</h1></div></header><main class="layout" id="content-inner"><div id="page"><div id="article-container"><font size="4">
+<font face='KaiTi_GB2312'>
+
+<h2 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h2><p>&emsp;&emsp;This note, as a part of my Quantum Mechanics note series, is especially taken when learning Dirac’s symbles and the interesting festure of representation invariance. Some contents come directly from his book <em>The Principles of Quantum Mechanics</em> because I believe that there exists no better description for the genius idea between linear algebra and quantum systems than his own words.</p>
+<h2 id="态叠加原理"><a href="#态叠加原理" class="headerlink" title="态叠加原理"></a>态叠加原理</h2><h3 id="原理的数学表述"><a href="#原理的数学表述" class="headerlink" title="原理的数学表述"></a>原理的数学表述</h3><p>&emsp;&emsp;量子力学要求动力学系统的态和动力学变量以一种相当奇怪的方式联系起来。态与动力学变量必须用一些数学上的量来表示，这些量与物理学中常用的量有不同的性质。</p>
+<p>&emsp;&emsp;各量子态之间的数学关系来自叠加原理的数学表述，叠加过程是一种相加的过程，这隐含着几个态能以某种方式相加而给出新的态。因此，这些态必定和这样一类的数学量联系——这一类的量可以加在一起而给出同样类型的其他量。最明显的这类量就是 <em><strong>矢量</strong></em>，但有限维空间中的普通矢量对量子力学中的大部分动力学系统而言不够普遍，必须推广至无限维空间中的矢量，而数学处理因收敛性问题而变得复杂。</p>
+<p>&emsp;&emsp;但是现在，我们仅仅处理这类矢量的某些一般性质，不深入到收敛性及其相关问题，直到有讨论的必要。</p>
+<p>&emsp;&emsp;以下讨论均在 <strong>复数域上的 Hilbert 空间</strong> 中进行。</p>
+<h3 id="左矢与右矢"><a href="#左矢与右矢" class="headerlink" title="左矢与右矢"></a>左矢与右矢</h3><h4 id="右矢：一个量子态"><a href="#右矢：一个量子态" class="headerlink" title="右矢：一个量子态"></a>右矢：一个量子态</h4><p>&emsp;&emsp;描述这些与量子态相关的矢量有一个特别的名称，就是 <strong>右矢</strong>（ket），它们可以通过叠加而构成新的右矢：<br>$$<br>    c_1|A⟩ + c_2 |B\rangle &#x3D; |R\rangle<br>$$<br>如果一个右矢依赖于参数 $x$ ，此参数在一定的范围内可以连续取值，那么可以对它的无穷序列线性叠加：<br>$$<br>    \int |x\rangle \mathrm{d}x &#x3D; |Q\rangle<br>$$<br>如果一个右矢能够被集合中其他右矢线性表示，就称它们<strong>线性相关</strong>，否则<strong>线性无关</strong>。</p>
+<p>&emsp;&emsp;现在假定，在某一特定时刻动力学系统的每个态对应于一个右矢，其对应关系是这样的： </p>
+<blockquote>
+<p><em><strong>如果一个态是由某些其他态叠加而成的，那么它所对应的右矢与这些其他态对应的右矢线性的表示，反之亦然。</strong></em></p>
+</blockquote>
+<p>这一假设导出了叠加的某些性质：叠加过程对参与叠加的各态都是对称的，它们在叠加中出现的次序并不重要。</p>
+<p>&emsp;&emsp;为了继续叠加原理的数学表述，必须再引入一个假设，<em><strong>那就是一个态与本身的叠加无法得到新的态</strong></em>，比如<br>$$<br>    c_1|A⟩ + c_2 |A\rangle &#x3D; (c_1+c_2)|A\rangle<br>$$<br>当 $c_1+c_2&#x3D;0$ ，则干涉相消，什么都得不到。但新的假设要求，除了这种特殊情况，其结果的态和原先的态完全一样。所以态是由右矢的方向确定的，而给右矢规定的任意长度无关紧要，并且 $-|A\rangle$ 和 $|A\rangle$ 的方向没有任何区别。</p>
+<p>&emsp;&emsp;这样一来，只有叠加系数的比是有效的，它由一个复的参量或者两个实的参量确定，所以从两个已知的态出发，利用叠加得到的态的总数是二重无穷大。</p>
+<h4 id="左矢：右矢的对偶"><a href="#左矢：右矢的对偶" class="headerlink" title="左矢：右矢的对偶"></a>左矢：右矢的对偶</h4><p>&emsp;&emsp;在右矢空间 $V&#x3D;{|A\rangle}$ 中定义一个线性函数，这样的线性函数总是可以看做是 $|A\rangle$ 与某个新的矢量的标量积（通过作标量积来实现这个function），满足这样关系的新的矢量就称为 <strong>左矢</strong>，它来自右矢的线性函数，是右矢的对偶，同样可以通过相加和数乘给出其他同类型的左矢。</p>
+<p>&emsp;&emsp;左矢与右矢的标量积写为 $\langle A | B \rangle$ ，这是一个<em>完整括号</em>。我们规定任何完整括号表达式表示一个数，而不完整括号表达式表示一个矢量，根据它是否包含了括号的第一或第二部分来确定是左矢还是右矢。</p>
+<p>&emsp;&emsp;既然左矢是右矢的一个线性函数，那么只要一个左矢与任意右矢的标量积定义了，这个左矢也就完全定义了。左矢之和则定义为</p>
+<p>$$<br>    {\langle B| + \langle B’|} ,|A\rangle &#x3D; \langle B|A\rangle + \langle B’ |A\rangle<br>$$<br>就像广义函数的定义——只有作用于右矢，左矢才能体现出它的价值。</p>
+<p>&emsp;&emsp;这里引入的左矢是与右矢完全不同的矢量，到目前为止它们之间还没有任何联系，只是在左矢与右矢之间存在标量积。现在假定：</p>
+<blockquote>
+<p><em><strong>左矢和右矢之间存在一一对应关系，即对应于的 $|A\rangle + |A’\rangle$ 左矢等于对应于 $|A\rangle$ 的左矢与对应于 $|A’\rangle$ 的左矢之和，而对应于 $c|A\rangle$ 的左矢 等于 $\overline{c}$ 乘上 $|A\rangle$ 对应的左矢，这里 $\overline{c}$ 是 $c$ 对应的共轭复量</strong></em>。</p>
+</blockquote>
+<p>我们就把这样的左矢写作 $\langle A |$。</p>
+<p>&emsp;&emsp;右矢与对应左矢之间的关系，使我们可以合理地称呼它们中的一类是另一类的 <strong>共轭虚量</strong>，它们是一类特殊的复量，不能将它们分为实部和虚部。</p>
+<p>&emsp;&emsp;考虑到左矢和右矢之间的一一对应关系，我们动力学系统在某一时刻的任意状态既可以用右矢表示，也可以用左矢表示，整个理论 在左矢和右矢之间本质上是对称的。</p>
+<p>&emsp;&emsp;称两个左矢或右矢正交，如果其中之一与另一个的共轭虚量的标量积为 $0$ 。</p>
+<p>&emsp;&emsp;上述的各假设给出了某一特定时刻的动力学系统的各态之间关系的完整方案，这些方案表现为数学形式，但它们隐含着某些物理条件（比如正交对应了什么物理意义？）。随着理论的进一步发展，这些物理条件将导出可以用观测表达的结果。</p>
+<h2 id="动力学变量与可观测量"><a href="#动力学变量与可观测量" class="headerlink" title="动力学变量与可观测量"></a>动力学变量与可观测量</h2><h3 id="必要的数学基础"><a href="#必要的数学基础" class="headerlink" title="必要的数学基础"></a>必要的数学基础</h3><p>&emsp;&emsp;前面我们讨论了左矢的含义：是一个右矢的线性函数的“数”的对应物，得到某个右矢的对应数值总是可以通过将它与这个左矢作标量积而实现。现在我们要考虑作为右矢的线性函数的右矢，它将会引出 <strong>算符</strong> 的概念。</p>
+<p>&emsp;&emsp;以下将会引入大量线性代数的知识，主要集中于线性变换 $\mathcal{A}$ 及其对应矩阵 $A$ 的特征与相似性质，请读者继续阅读前务必保证已经掌握足够的线性代数知识。如果没有，请参考[2]的第六章靠后部分以及第七章。</p>
+<p>&emsp;&emsp;为了提高狄拉克符号的熟练度，我们将右矢 $|A\rangle$ 想象为 Hilbert 空间中某区域的一个矢量 $\alpha$，左矢 $\langle A |$  想象为另一个区域的一个矢量  $\beta$ ，<strong>这两个区域互不重叠，但充满整个 HIllbert 空间</strong>。而将算符想象为抽象的 <strong>线性变换</strong> $\mathcal{A}$，表象是一组正交基，所以算符（线性变换）在不同表象（基）下的矩阵（做具体操作的，比如 $\frac{\hbar}{i}\frac{\partial}{\partial x}$ ，当然如果这样说那么需要证明一个这样的微分算子和一个矩阵是相联系的）不同，但是这些矩阵（具体算符）具有一定的联系。</p>
+<p>&emsp;&emsp;或许，不如这样说：</p>
+<ol>
+<li>复数域上无穷维线性空间中的向量被分为两部分（左矢和右矢），它们服从共轭转置的对应关系；</li>
+<li>这个线性空间定义了内积（两个右矢的内积和两个左矢的内积），并且是完备的，在其中可以找到一些标准正交基（ $\delta$ 函数），比如坐标表象和动量表象；</li>
+<li>线性空间中存在线性变换（坐标 <em><strong>算符</strong></em>  $\hat{x}$ 和动量算符 $\hat{p}$），取一组基可以将它表示为在该组基下的矩阵；</li>
+<li>由于这样的矩阵是无穷维的，它常常用一个微分 <em><strong>算子</strong></em> 代为表示；</li>
+<li>坐标表象和动量表象都是标准正交基，之间的转换服从正交变换，变换的矩阵以 Fourier 变换代替。</li>
+</ol>
+<p>&emsp;&emsp;这里我故意将算符和算子区别开。本文的“算符”二字，是指作用与抽象线性空间中的线性变换；而“算子”二字，是指进入某一表象后算符在这组表象下的具体表示，它可以是微分，也可以是矩阵，只不过常常以微分的形式出现而已。</p>
+<h2 id="表象理论"><a href="#表象理论" class="headerlink" title="表象理论"></a>表象理论</h2><h3 id="物理量与表象"><a href="#物理量与表象" class="headerlink" title="物理量与表象"></a>物理量与表象</h3><p>&emsp;&emsp;为了量化某个物体的物理性质，我们需要用到一些数（可以是一个，也可以是多个），他们的集合称为 <strong>物理量</strong>。有的物理量只需要一个数就能完全描述，例如质量、能量；但有的却不能。为了完全描述一个更为复杂的物理量，我们需要使用更多的数，我们就讲这些数称为 <strong>分量</strong>。描述同一物理性质的分量应当有某种结构或者组织形式，这是因为这些复杂的物理量大多与这个物理性质的各向异性有关。体现在这些数上，就是不同位置的数不能随意交换，应当按照某些顺序排列起来。</p>
+<p>&emsp;&emsp;此外，坐标系在描述物理系统的演化时也具有非常关键的作用，而不同参考系之间存在一定的变换，在经典力学中即是 <strong>正交变换</strong>， 它是欧氏空间中保内积、保长度、保标准正交基的变换。</p>
+<p>&emsp;&emsp;在不同坐标系中，我们不能先验地认为某量在不同坐标系下的分量具有某种关系。然而，基于对周遭世界客观实在的信念，物理量及物理规律应当独立于人为设定的参考系而存在。也就是说，这是物理对象的内禀性质，不以人的意志为转移。</p>
+<p>&emsp;&emsp;所以，一个量能被称为物理量，理应具有某种特殊的性质，即这个量在不同坐标系中的分量之间的关系应当是确定的——仅与联系两个坐标系的正交变换有关，而与两个参考系无关。</p>
+<p>&emsp;&emsp;坐标系的本质是欧氏空间中的一组标准正交基。正如在不依赖这组基时，我们依然可以谈论某个线性变换 $\mathscr{A}$ 的特征值与特征向量一般，不选取坐标系我们依然可以谈论某个物理量的某些本质性质，只不过不太适应这种抽象表述而已。</p>
+<p>&emsp;&emsp;将“<strong>坐标系</strong>”的概念推而广之，就是 representation，“<strong>表象</strong>”。无论是在线性空间中选择某组基，还是以你所站立的点为原点、经纬线分别作为 X、Y 轴建立直角坐标系，都是选择了一种观察、看待某个对象（线性变换 $\mathscr{A}$、苹果落地）的方式，它是人为选择的，决定了对象在我们面前的呈现形式，也就是“表象”二字的字面含义。</p>
+<p>&emsp;&emsp;而这种 representation invariance 的观点也是量子力学的基石。一个例子是如下形式的薛定谔方程</p>
+<p>$$<br>   i\hbar \frac{\partial  \psi}{\partial t} &#x3D; -\frac{\hbar^2}{2m}\frac{\partial ^2  \psi}{\partial x^2}+ V(x)\psi<br>$$</p>
+<p>即是以态矢表示的薛定谔方程<br>$$<br>    i \hbar \frac{\mathrm{d}}{\mathrm{d} t}|\psi(t)\rangle&#x3D;\hat{H}|\psi(t)\rangle<br>$$</p>
+<p>在坐标表象下的呈现形式而已。为了确认这一点，我们只需在方程左右同时左乘 $\langle x |$ 即可。</p>
+<p>&emsp;&emsp;另一个和表象的含义相似的词汇为 “<strong>绘景</strong>”。不同绘景的区别实际上也是我们看待量子系统演化的不同方式。薛定谔绘景、海森堡绘景以及相互作用绘景的核心区别，就在于怎样在态矢与算符之间分配这个传播子 $\mathcal{U}$。</p>
+<p>&emsp;&emsp;对表象理论更细致的讨论参见[4]的第一章。</p>
+<h2 id="简单应用"><a href="#简单应用" class="headerlink" title="简单应用"></a>简单应用</h2><h3 id="薛定谔方程的形式解"><a href="#薛定谔方程的形式解" class="headerlink" title="薛定谔方程的形式解"></a>薛定谔方程的形式解</h3><p>$$<br>    i \hbar \frac{\mathrm{d}}{\mathrm{d} t}|\psi(t)\rangle&#x3D;\hat{H}|\psi(t)\rangle<br>$$<br>的形式解为<br>$$<br>    |\psi(t)\rangle&#x3D;e^{-i \hat{H}\left(t-t_0\right) &#x2F; \hbar}\left|\psi\left(t_0\right)\right\rangle<br>$$<br>如果哈密顿算符满足<br>$$<br>    \hat{H}|n\rangle&#x3D;E_n|n\rangle<br>$$<br>则令 $a &#x3D; -i \left(t-t_0\right) &#x2F; \hbar$ ，<br>$$<br>    \begin{aligned}<br>    |\psi(t)\rangle&amp;&#x3D;e^{a\hat{H}}\left|\psi\left(t_0\right)\right\rangle\<br>    &amp;&#x3D;\frac{a^j}{j!}\hat{H}^j\cdot|n\rangle \langle n| \psi\left(t_0\right)\rangle\<br>    &amp;&#x3D; \frac{a^j}{j!}E_n^j|n\rangle \langle n| \psi\left(t_0\right)\rangle\<br>    &amp;&#x3D;e^{aE_n}|n\rangle \langle n| \psi\left(t_0\right)\rangle\<br>    \end{aligned}<br>$$<br>即<br>$$<br>    |\psi(t)\rangle&#x3D;\sum_n e^{-i E_n\left(t-t_0\right) &#x2F; \hbar}\left\langle n \mid \psi\left(t_0\right)\right\rangle|n\rangle<br>$$</p>
+<h3 id="双态系统"><a href="#双态系统" class="headerlink" title="双态系统"></a>双态系统</h3><p>&emsp;&emsp;对于双态系统，它的哈密顿算符为<br>$$<br>    \hat{H}&#x3D;\beta(|x_1\rangle\langle x_2|+| x_2\rangle\langle x_1|)<br>$$</p>
+<p>在 $|x_1\rangle,|x_2\rangle$ 表象下，哈密顿算符成为矩阵算子（张量在基下的分量），它的 $ij$ 元为</p>
+<p>$$<br>    H_{ij} &#x3D; \langle x_i | \hat{H} |x_j \rangle<br>$$</p>
+<p>对角化，求得其本征值为 $\beta,-\beta$ ，对应的本征矢为</p>
+<p>$$<br>    \begin{aligned}<br>&amp;\psi_{+}&#x3D;\frac{1}{\sqrt{2}}[1,1]^T \Longrightarrow \frac{1}{\sqrt{2}}(|x_1\rangle+|x_2\rangle) \equiv|+\rangle, \<br>&amp;\psi_{-}&#x3D;\frac{1}{\sqrt{2}}[1,-1]^T \Longrightarrow \frac{1}{\sqrt{2}}(|x_1\rangle-|x_2\rangle) \equiv|-\rangle .<br>\end{aligned}<br>$$</p>
+<p>如果系统最初处于 $|x_1\rangle$ 的初始状态，求解薛定谔方程，得到</p>
+<p>$$<br>    \begin{aligned}<br>|\psi(t)\rangle &amp;&#x3D;e^{-i \hat{H} t &#x2F; \hbar}|x_1\rangle&#x3D;e^{-i \beta t &#x2F; \hbar}|+\rangle\langle+\mid x_1\rangle+e^{i \beta t &#x2F; \hbar}|-\rangle\langle-\mid x_1\rangle \<br>&amp;&#x3D; \cos \left(\frac{\beta t}{\hbar}\right)|x_1\rangle-i \sin \left(\frac{\beta t}{\hbar}\right)|x_2\rangle .<br>\end{aligned}<br>$$</p>
+<p>这是在状态 $|x_1\rangle$ 和 $|x_2\rangle$ 之间的来回振荡。</p>
+<p>&emsp;&emsp;从计算中可以看出，哈密顿算符的本征矢量并不是它表达式中出现的那两个正交矢量，而是对它们又进行了旋转之后得到的新的正交矢量。所以双态系统的状态只能在 $|x_1\rangle, |x_2\rangle$ 之间来回摇摆，并且摆不到 $\hat H$ 的本征矢上来，但经过测量又能够得到这两个本征矢。</p>
+<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><p>[1].Dirac, The Principles of Quantum Mechanics, 机械工业出版社</p>
+<p>[2].李尚志,线性代数（数学专业用）,高等教育出版社</p>
+<p>[3].Brian C. Hall, Quantum Theory for Mathematicians, 世界图书出版公司</p>
+<p>[4].樱井纯, 现代量子力学 第二版 中译本修订版, 世界图书出版公司, 2021</p>
+</font>
+</font></div><hr class="custom-hr"/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> Comment</span></div></div><div class="comment-wrap"><div><div id="waline-wrap"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/avatar.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">AYIN</div><div class="author-info__description"></div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">7</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">5</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">3</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/Bessgendre"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/Bessgendre" target="_blank" title="Github"><i class="fab fa-github" style="color: #24292e;"></i></a><a class="social-icon" href="mailto:xuankecai@gmail.com" target="_blank" title="Email"><i class="fas fa-envelope" style="color: #4a7dbe;"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>Announcement</span></div><div class="announcement_content">τὸ τί ἦν εἶναι</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>Recent Post</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2022/10/29/The_Analysis_of_USTC/" title="The Analysis of USTC"><img src="/img/literature/convolution.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="The Analysis of USTC"/></a><div class="content"><a class="title" href="/2022/10/29/The_Analysis_of_USTC/" title="The Analysis of USTC">The Analysis of USTC</a><time datetime="2022-10-29T05:00:00.000Z" title="Created 2022-10-29 00:00:00">2022-10-29</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/01/11/The_Faults_of_Zhiyong/" title="The Faults of Zhiyong"><img src="/img/literature/faults.webp" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="The Faults of Zhiyong"/></a><div class="content"><a class="title" href="/2022/01/11/The_Faults_of_Zhiyong/" title="The Faults of Zhiyong">The Faults of Zhiyong</a><time datetime="2022-01-11T06:00:00.000Z" title="Created 2022-01-11 00:00:00">2022-01-11</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/12/29/Calculation_Method/" title="An Calculation Method Modified by Symbolic Computation in Analytical Chemistry"><img src="https://pica.zhimg.com/v2-a49add4947277419265c182d8b835d36_720w.jpg?source=d16d100b" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="An Calculation Method Modified by Symbolic Computation in Analytical Chemistry"/></a><div class="content"><a class="title" href="/2021/12/29/Calculation_Method/" title="An Calculation Method Modified by Symbolic Computation in Analytical Chemistry">An Calculation Method Modified by Symbolic Computation in Analytical Chemistry</a><time datetime="2021-12-29T16:20:12.000Z" title="Created 2021-12-29 10:20:12">2021-12-29</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/12/05/Theology/" title="Some Questions about The Theology"><img src="/img/literature/theology.jpeg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Some Questions about The Theology"/></a><div class="content"><a class="title" href="/2021/12/05/Theology/" title="Some Questions about The Theology">Some Questions about The Theology</a><time datetime="2021-12-05T06:00:00.000Z" title="Created 2021-12-05 00:00:00">2021-12-05</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/10/22/The_Analysis_of_Time/" title="The Analysis of Time"><img src="/img/literature/time.jpeg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="The Analysis of Time"/></a><div class="content"><a class="title" href="/2021/10/22/The_Analysis_of_Time/" title="The Analysis of Time">The Analysis of Time</a><time datetime="2021-10-22T05:00:00.000Z" title="Created 2021-10-22 00:00:00">2021-10-22</time></div></div></div></div><div class="card-widget" id="card-newest-comments"><div class="item-headline"><i class="fas fa-comment-dots"></i><span>Latest Comments</span></div><div class="aside-list"><span>loading...</span></div></div><div class="card-widget card-categories"><div class="item-headline">
+            <i class="fas fa-folder-open"></i>
+            <span>Categories</span>
+            
+            </div>
+            <ul class="card-category-list" id="aside-cat-list">
+            <li class="card-category-list-item "><a class="card-category-list-link" href="/categories/LITERATURE/"><span class="card-category-list-name">LITERATURE</span><span class="card-category-list-count">5</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/NOTES/"><span class="card-category-list-name">NOTES</span><span class="card-category-list-count">1</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/THESIS/"><span class="card-category-list-name">THESIS</span><span class="card-category-list-count">1</span></a></li>
+            </ul></div><div class="card-widget card-tags"><div class="item-headline"><i class="fas fa-tags"></i><span>Tags</span></div><div class="card-tag-cloud"><a href="/tags/Chemistry/" style="font-size: 1.3em; color: rgb(101, 174, 145)">Chemistry</a><a href="/tags/Mathematics/" style="font-size: 1.15em; color: rgb(78, 55, 44)">Mathematics</a><a href="/tags/Physics/" style="font-size: 1.15em; color: rgb(192, 98, 135)">Physics</a><a href="/tags/Philosophy/" style="font-size: 1.45em; color: rgb(17, 28, 83)">Philosophy</a><a href="/tags/History/" style="font-size: 1.15em; color: rgb(116, 17, 163)">History</a></div></div><div class="card-widget card-archives"><div class="item-headline"><i class="fas fa-archive"></i><span>Archives</span></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2022/10/"><span class="card-archive-list-date">October 2022</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2022/01/"><span class="card-archive-list-date">January 2022</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2021/12/"><span class="card-archive-list-date">December 2021</span><span class="card-archive-list-count">2</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2021/10/"><span class="card-archive-list-date">October 2021</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2021/05/"><span class="card-archive-list-date">May 2021</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2020/05/"><span class="card-archive-list-date">May 2020</span><span class="card-archive-list-count">1</span></a></li></ul></div><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>Info</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">Article :</div><div class="item-count">7</div></div><div class="webinfo-item"><div class="item-name">UV :</div><div class="item-count" id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">PV :</div><div class="item-count" id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">Last Update :</div><div class="item-count" id="last-push-date" data-lastPushDate="2023-10-21T03:12:20.805Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2022 - 2023 By AYIN</div><div class="framework-info"><span>Framework </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>Theme </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="darkmode" type="button" title="Toggle Between Light And Dark Mode"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="Toggle between Single-column and Double-column"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="Setting"><i class="fas fa-cog fa-spin"></i></button><a id="to_comment" href="#post-comment" title="Scroll To Comments"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="Back To Top"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"><script>(() => {
+  const initWaline = () => {
+    const waline = Waline.init(Object.assign({
+      el: '#waline-wrap',
+      serverURL: 'https://blog-comments-five.vercel.app',
+      pageview: false,
+      dark: 'html[data-theme="dark"]',
+      path: window.location.pathname,
+      comment: false,
+    }, null))
+  }
+
+  const loadWaline = async () => {
+    if (typeof Waline === 'object') initWaline()
+    else {
+      await getCSS('https://cdn.jsdelivr.net/npm/@waline/client/dist/waline.min.css')
+      await getScript('https://cdn.jsdelivr.net/npm/@waline/client/dist/waline.min.js')
+      initWaline()
+    }
+  }
+
+  if ('Waline' === 'Waline' || !false) {
+    if (false) btf.loadComment(document.getElementById('waline-wrap'),loadWaline)
+    else setTimeout(loadWaline, 0)
+  } else {
+    window.loadOtherComment = loadWaline
+  }
+})()</script></div><script>window.addEventListener('load', () => {
+  const changeContent = content => {
+    if (content === '') return content
+
+    content = content.replace(/<img.*?src="(.*?)"?[^\>]+>/ig, '[image]') // replace image link
+    content = content.replace(/<a[^>]+?href=["']?([^"']+)["']?[^>]*>([^<]+)<\/a>/gi, '[link]') // replace url
+    content = content.replace(/<pre><code>.*?<\/pre>/gi, '[code]') // replace code
+    content = content.replace(/<[^>]+>/g,"") // remove html tag
+
+    if (content.length > 150) {
+      content = content.substring(0,150) + '...'
+    }
+    return content
+  }
+
+  const generateHtml = array => {
+    let result = ''
+
+    if (array.length) {
+      for (let i = 0; i < array.length; i++) {
+        result += '<div class=\'aside-list-item\'>'
+
+        if (true) {
+          const name = 'src'
+          result += `<a href='${array[i].url}' class='thumbnail'><img ${name}='${array[i].avatar}' alt='${array[i].nick}'></a>`
+        }
+
+        result += `<div class='content'>
+        <a class='comment' href='${array[i].url}' title='${array[i].content}'>${array[i].content}</a>
+        <div class='name'><span>${array[i].nick} / </span><time datetime="${array[i].date}">${btf.diffDate(array[i].date, true)}</time></div>
+        </div></div>`
+      }
+    } else {
+      result += 'No comments'
+    }
+
+    let $dom = document.querySelector('#card-newest-comments .aside-list')
+    $dom.innerHTML= result
+    window.lazyLoadInstance && window.lazyLoadInstance.update()
+    window.pjax && window.pjax.refresh($dom)
+  }
+
+  const getComment = async () => {
+    try {
+      const res = await fetch('https://blog-comments-five.vercel.app/api/comment?type=recent&count=6', { method: 'GET' })
+      const result = await res.json()
+      const walineArray = result.data.map(e => {
+        return {
+          'content': changeContent(e.comment),
+          'avatar': e.avatar,
+          'nick': e.nick,
+          'url': e.url + '#' + e.objectId,
+          'date': e.time || e.insertedAt
+        }
+      })
+      saveToLocal.set('waline-newest-comments', JSON.stringify(walineArray), 10/(60*24))
+      generateHtml(walineArray)
+    } catch (err) {
+      console.error(err)
+      const $dom = document.querySelector('#card-newest-comments .aside-list')
+      $dom.textContent= "Unable to retrieve comments, please check the configuration"
+    }
+  }
+
+  const newestCommentInit = () => {
+    if (document.querySelector('#card-newest-comments .aside-list')) {
+      const data = saveToLocal.get('waline-newest-comments')
+      if (data) {
+        generateHtml(JSON.parse(data))
+      } else {
+        getComment()
+      }
+    }
+  }
+
+  newestCommentInit()
+  document.addEventListener('pjax:complete', newestCommentInit)
+})</script><script defer="defer" id="fluttering_ribbon" mobile="false" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/canvas-fluttering-ribbon.min.js"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>

@@ -1,0 +1,583 @@
+<!DOCTYPE html><html lang="en" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>Quantum Mechanics I - Wave Function | LUMINESCENCE</title><meta name="author" content="AYIN"><meta name="copyright" content="AYIN"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="Introduction&amp;emsp;&amp;emsp;This note series is based on Quantum Physics (EN) in Yijing Yan‘s Class (2022, Autumn) and 8.04, Quantum Physics I, Allan Adams, MIT on bilibili. In this notebook, I will f">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Quantum Mechanics I - Wave Function">
+<meta property="og:url" content="https://bessgendre.github.io/Quan_I_Wave_Function.html">
+<meta property="og:site_name" content="LUMINESCENCE">
+<meta property="og:description" content="Introduction&amp;emsp;&amp;emsp;This note series is based on Quantum Physics (EN) in Yijing Yan‘s Class (2022, Autumn) and 8.04, Quantum Physics I, Allan Adams, MIT on bilibili. In this notebook, I will f">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://home.ustc.edu.cn/~ustcxkc/img/quantum/wave_function.png">
+<meta property="article:published_time" content="2022-08-10T05:00:00.000Z">
+<meta property="article:modified_time" content="2022-08-31T05:00:00.000Z">
+<meta property="article:author" content="AYIN">
+<meta property="article:tag" content="Physics">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://home.ustc.edu.cn/~ustcxkc/img/quantum/wave_function.png"><link rel="shortcut icon" href="/img/avatar.jpg"><link rel="canonical" href="https://bessgendre.github.io/Quan_I_Wave_Function.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: 'Copy Successful',
+    error: 'Copy Error',
+    noSupport: 'Browser Not Supported'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: 'Just now',
+    min: 'minutes ago',
+    hour: 'hours ago',
+    day: 'days ago',
+    month: 'months ago'
+  },
+  copyright: {"limitCount":50,"languages":{"author":"Author: AYIN","link":"Link: ","source":"Source: LUMINESCENCE","info":"Copyright is owned by the author. For commercial reprints, please contact the author for authorization. For non-commercial reprints, please indicate the source."}},
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid/dist/infinitegrid.min.js',
+    buttonText: 'Load More'
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: true,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'Quantum Mechanics I - Wave Function',
+  isPost: false,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: false,
+  postUpdate: '2022-08-31 00:00:00'
+}</script><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+    
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
+
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
+
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
+    
+      win.activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+        if (t === 'dark') activateDarkMode()
+        else if (t === 'light') activateLightMode()
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.3.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/avatar.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">7</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">5</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">3</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> Link</span></a></div><div class="menus_item"><a class="site-page" href="/download/"><i class="fa-fw fas fa-download"></i><span> Download</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div></div></div><div class="page" id="body-wrap"><header class="not-home-page" id="page-header" style="background: #1772b4"><nav id="nav"><span id="blog-info"><a href="/" title="LUMINESCENCE"><span class="site-name">LUMINESCENCE</span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> Link</span></a></div><div class="menus_item"><a class="site-page" href="/download/"><i class="fa-fw fas fa-download"></i><span> Download</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="page-site-info"><h1 id="site-title">Quantum Mechanics I - Wave Function</h1></div></header><main class="layout" id="content-inner"><div id="page"><div id="article-container"><font size="4">
+<font face='KaiTi_GB2312'>
+
+
+<h2 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h2><p>&emsp;&emsp;This note series is based on Quantum Physics (EN) in <a target="_blank" rel="noopener" href="https://openquan.ustc.edu.cn/main.htm#Welcome" title="Yijing Yan">Yijing Yan</a>‘s Class (2022, Autumn) and <a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV15t411z7dL?p=1&vd_source=557d1419bd34f91b4d4aac52ed68ff8d" title="8.04, Quantum Physics I, Allan Adams, MIT">8.04, Quantum Physics I, Allan Adams, MIT</a> on bilibili. In this notebook, I will focus on some insights and special understandings into quantum systems, as well as the basic skeleton of quantum mechanics.</p>
+<p>&emsp;&emsp;Much questions will be waiting for an answer when learning quantum mechanics, so I really recommend the MIT online course to you because not only the lecturer is teaching the students some basic ideas or insights but the students are always raising deep and leading questions, pushing the audience in the right direction, and that is what those Chinese classes or even textbooks are lack of.</p>
+<p>&emsp;&emsp;The rest parts of this note will be written in a mixture of English and Chinese.</p>
+<h2 id="Wave-Function"><a href="#Wave-Function" class="headerlink" title="Wave Function"></a>Wave Function</h2><p>&emsp;&emsp;<strong>物理学不是形而上学</strong>，它的任务不是去探究“为什么”：世界为什么这样运行、给定粒子的初始位置和速度它的运动情况为什么就能够唯一确定（而不再需要初始加速度）、量子力学为什么和我们的的直觉相悖等等。这些都不是物理学要解释的东西，这些都是哲学要解释的东西，它牵扯到本体论或者神学。</p>
+<p>&emsp;&emsp;物理学，是给世界建立模型，并让我们得到更加准确的预测——这和是否违反直觉毫无关联。</p>
+<p>&emsp;&emsp;所谓“物理解释”和“物理图像”，是人脑思维机制与真实世界之间的桥梁，是人类之所以能够触摸宇宙至高的可怜原因——正因如此，世界才是 <strong>可知</strong> 的。例如<strong>波粒二象性</strong>，作为初学者最难以理解的物理图像，在 Ira N. Levine 所著 <em>Quantum Chemistry, the Seventh Edition</em> 中有如下评述：</p>
+<blockquote>
+<p><em>Evolution has shaped the human brain to allow it to understand and deal effectively with macroscopic phenomena. The human nervous system was not developed to deal with phenomena at the atomic and molecular level, so it is not surprising if we cannot fully understand such phenomena.</em></p>
+<p>&emsp;&emsp;——Ira N. Levine, Quantum Chemistry, the Seventh Edition</p>
+</blockquote>
+<p>此外，量子力学大师狄拉克在他的 The Principles of Quantum Mechanics 中也写道：</p>
+<blockquote>
+<p><em>物理科学的主要目的并不是提供图像，而是表述那些支配现象的规律，并利用这些规律去发现新的现象。如果图像存在，那样更好；但是图像存在与否是次要的。在通常意义上，“图像”这个词就是本质上按照经典路线起作用的模型，而在原子现象中，不能期望存在这样的图像。</em></p>
+<p><em>然而，人们可以把“图像”一词加以扩展，以包括任何<strong>看待基本规律的方式</strong>，这一方式使得基本规律的自洽性变得明显。</em></p>
+<p>&emsp;&emsp;——Dirac, The Principles of Quantum Mechanics</p>
+</blockquote>
+<p>&emsp;&emsp;如此一来，建立在一系列对真实世界的假设上的<strong>经典力学</strong>本身，也只是人们为了理解真实世界建构的物理模型而已，并且它对人类直觉来说并不遥远。然而在19世纪末至20世纪初的这段时间内，经典力学的两个假设遭遇了来自真实世界的挑战：<strong>绝对时空观</strong>被相对论推翻，以 Cauchy 问题解唯一性定理保证的<strong>确定论</strong>思想则被量子力学所动摇。</p>
+<blockquote>
+<p><em>It was not invented because anyone thought this is the way the world <strong>should</strong> behave, but because various experiments showed that this is the way the world <strong>does</strong> behave.</em></p>
+<p>&emsp;&emsp;——Brian C. Hall, Quantum Theory for Mathematicians</p>
+</blockquote>
+<p>&emsp;&emsp;与经典力学一样，量子力学也建立在一套规则、一套假设上，但是这些假设并不是从实验中得出的，而是：</p>
+<blockquote>
+<p><em>Physical intuition, wildly divorsed from experiment, pushing you in the right direction.</em> </p>
+<p>&emsp;&emsp;——8.04, Quantum Physics I, Allan Adams, MIT</p>
+</blockquote>
+<p>并且</p>
+<blockquote>
+<p><em>These rules are awsome, if the predictions are good, and if the predictions are bad, these rules will sunk.</em></p>
+<p>&emsp;&emsp;——8.04, Quantum Physics I, Allan Adams, MIT</p>
+</blockquote>
+<p>&emsp;&emsp;所以，下面我们将放弃经典力学的所有结论，从最基本的东西开始，建构量子力学的框架——这个过程和数学家对欧几里得第五公设稍作更改之后建立 Riemann 几何相比更具革命性。</p>
+<h3 id="De-Broglie-Relation"><a href="#De-Broglie-Relation" class="headerlink" title="De Broglie Relation"></a>De Broglie Relation</h3><p>&emsp;&emsp;爱因斯坦在解释光电效应时提出光具有粒子性。一列以 $\omega$ 和 $k$ 描述的光波具有粒子性的能量 $E$ 与动量 $p$ ，即 <em><strong>波动性第一，粒子性第二</strong></em>：<br>$$<br>\begin{aligned}<br>    E &amp;&#x3D; \hbar ω\<br>    p &amp;&#x3D; \hbar k<br>\end{aligned}<br>$$</p>
+<p>&emsp;&emsp;现在，德布罗意认为，每一个粒子都有一个波和它对应，这个粒子的能量和动量都可以从<strong>描述这个波的波函数</strong>里得知，即 <em><strong>粒子性第一，波动性第二</strong></em>。<br>$$<br>\begin{aligned}<br>    \omega &amp;&#x3D; \frac{E}{\hbar} \<br>    k &amp;&#x3D; \frac{p}{\hbar}<br>\end{aligned}<br>$$</p>
+<p>&emsp;&emsp;在数学上（mathematically），等式的两边是同样的、等价的，在这里容易造成混淆，也许将这里的 “$&#x3D;$” 理解为“赋值”才更接近它的含义：</p>
+<blockquote>
+<p>*因为德布罗意的工作是物理上的（physically）、概念上的（conceptually）一次革命。<strong>物理概念</strong>一转换，那么稍作推导（deduction）就能立刻知道 <strong>可以做什么</strong>。*</p>
+<p>&emsp;&emsp;——Yijing Yan, Quantum Physics (EN), 2022 Autumn, USTC</p>
+</blockquote>
+<p>&emsp;&emsp;举例而言，一个空间中的自由粒子对应于一个平面波 $e^{i(kx-\omega t)}$ ，这个波函数具有确定的波长，那么这个粒子，根据德布罗意关系，就具有“确定”的动量（we are pretty confident about its momentum）。</p>
+<p>&emsp;&emsp;所以德布罗意关系的真正含义，是每一个具有能量 $E$ 和动量 $p$ 的粒子都有一个以 $\omega &#x3D; E&#x2F;\hbar$ 和 $k &#x3D; p&#x2F;\hbar$ 的波与之对应，而波函数 $\psi$ 就是这个波的描述形式。</p>
+<p>&emsp;&emsp;由此可见，事实上有两套方法可以用于描述一个物理对象（object）的状态（configuration），一种是粒子式的动量与能量，一种是波动式的波矢与频率。这两种描述方式是等价的，就像将空间中的矢量向不同的基分解一样。自然，我们希望这两组基的“过渡矩阵”满足一些性质，让这两种描述方式之间的转换能够有简单的形式。</p>
+<p>&emsp;&emsp;容易想到，<em>Fourier变换</em> 就是我们想要的正交变换（幺正变换），它将一组正交基（$\delta(x-x_0)$ 位置函数系）变换为另一组正交基（$e^{-ikx_0}$ 波动函数系）：</p>
+<p>$$<br>    e^{-ikx_0} &#x3D; \int_{-\infty}^{\infty} \delta(x-x_0)e^{-ikx}dx<br>$$<br>正交性：<br>$$<br>    \int_{-\infty}^{\infty} \delta^*(x-x_1)\delta(x-x_2)dx &#x3D; \delta(x_1-x_2)<br>$$<br>$$<br>    \int_{-\infty}^{\infty}(e^{ikx_1})^*e^{ikx_2} dk&#x3D; 2\pi \delta(x_1-x_2)<br>$$<br>关于 Fourier 变换更深刻的理解见 Fourier Transform 一节，以及泛函分析与广义函数论教材。</p>
+<h3 id="Postulate-I-Configuration"><a href="#Postulate-I-Configuration" class="headerlink" title="Postulate I: Configuration"></a>Postulate I: Configuration</h3><p><em><strong>The state (configuration) of a quantum system is completely specified by a wave fuction $\psi(x)$ , which is a complex function.</strong></em></p>
+<p>&emsp;&emsp;在经典力学中，指定一个系统的状态（configuration）的含义是给出系统的位置 $x$ 和动量 $p$ 。但是由于真实世界中位置和动量总是有不确定度关系： $\Delta x \Delta p \geq \hbar$ ，所以位置和动量其实是不能同时指定的。虽然不确定性对于我们生活的世界的尺度而言是如此的小，以致经典力学忽略这个差别而犯下的错误不足以动摇它在宏观低速条件下的主宰地位，但真实世界并非如此。</p>
+<p>&emsp;&emsp;既然同时指定一个粒子的位置和动量是非法的，那么我们只能从位置、动量两者择其一，来构建世界的物理的基础。但是仅有粒子的位置在任何情况下都是无法预测它将来的变化的，我们还需要更多的信息，所以波函数——粒子位置对某个复数的函数，应运而生。</p>
+<blockquote>
+<p><em>This is a complete specification of the state of the system. If I know the wave function, I neither need nor have access to any further information about the system. All the information specifying the configuration of the system is completely contained in the wave function.</em></p>
+<p>&emsp;&emsp;——8.04, Quantum Physics I, Allan Adams, MIT</p>
+</blockquote>
+<p>&emsp;&emsp;这里我们不加定义地直接使用 configuration 这个词来指代量子系统的某些东西是非常危险的：虽然我们说经典系统的 configuration 是指位置和动量，但这只是类比——一个量子系统的 configuration 究竟包含哪些东西并没有说明白。所以 Postulate I 实际上是在将 configuration <strong>悬设</strong>起来，让它在之后发挥作用。</p>
+<p>&emsp;&emsp;指定一个系统的 configuration，是指能够通过一定的手段预言系统的时间演化，比如指定经典粒子的初始位置和初始动量，之后的运动就能唯一确定。量子系统也是如此：给定初始波函数 $\psi_{t &#x3D; 0}$ ，随后它将会遵守薛定谔方程进行时间演化，但演化的不是粒子本身的位置或者动量，而是这些量的概率分布。</p>
+<p>&emsp;&emsp;任意函数都可以是微观粒子的波函数吗？波函数的“物理图像”又是什么？随着这个假设产生的一系列问题，表明我们的理论并不是 well-defined ，还需要添加更多的假设。</p>
+<h3 id="Postulate-II-Probability-Interpretation"><a href="#Postulate-II-Probability-Interpretation" class="headerlink" title="Postulate II: Probability Interpretation"></a>Postulate II: Probability Interpretation</h3><p><em><strong>The meaning of the wave function is that the probability upon measurement the object is found in the positon $x$ is equal to the norm squared of $\psi(x)$.</strong></em></p>
+<p><em><strong>$\mathbb{P}(x) &#x3D; |\psi(x)|^2$ determines probability density that the object in state $\psi(x)$ will be found at $x$.</strong></em></p>
+<ol>
+<li><p>$\psi(x)$ 是一个复数，而范数的平方永远是实数</p>
+</li>
+<li><p>波函数的量纲是长度的负二分之一次方： $L^{-1&#x2F;2}$</p>
+</li>
+</ol>
+<p>&emsp;&emsp;概率密度的定义：<br>$$<br>    \mathbb{P}{x\in (x,x+dx)} &#x3D; \mathbb{P}(x)dx &#x3D; |\psi(x)|^2dx<br>$$<br>以及波函数的概率解释要求的归一化条件：<br>$$<br>    \int_{\Omega} \mathbb{P}(x)dx &#x3D; 1<br>$$</p>
+<p>&emsp;&emsp;一个函数之所以能够成为波函数，还需要它<em>单值连续、模方可积</em></p>
+<h3 id="Postulate-III-Superposition"><a href="#Postulate-III-Superposition" class="headerlink" title="Postulate III: Superposition"></a>Postulate III: Superposition</h3><p><em><strong>given two possible configurations of a quantum system corresponding to two dinstinct wave functions $\psi_1(x)$ and $\psi_2(x)$ ,the system can also be in a superposition of $\psi_1(x)$ and $\psi_2(x)$.</strong></em></p>
+<p><em><strong>It means that there is also an allowed configuration corresponding to an arbitrary superposition of them:</strong></em></p>
+<p>$$<br>    \psi(x) &#x3D; \alpha \psi_1(x) +  \beta \psi_2(x),;;\alpha,\beta \in \mathbb{C}<br>$$</p>
+<blockquote>
+<p><em>All the cool stuffs in quantum mechanics, all the strange and counter-intuitive stuffs are directly from the next postulate, so here it is.</em></p>
+<p>&emsp;&emsp;——8.04, Quantum Physics I, Allan Adams, MIT</p>
+</blockquote>
+<p>&emsp;&emsp;同一系统两个可能波函数的线性组合也是系统可能的波函数。虽然这些线性组合在自然界看来是平等的，但我们主观意义上认为某些波函数“更平等”：更容易理解，比如 $e^{ikx}$ 可以理解为平面波，它也是函数空间中的一组正交基：</p>
+<blockquote>
+<p><em>这些态之间存在特殊的联系，以至于系统确定地处于一个态时，我们可以把系统当成部分地处于两个或更多其他态中的每一个……这里包含了一种全新的思想，我们必须习惯使用这一思想，必须开始用它继续建立严格的数学理论，而不要任何详细的经典图像。</em></p>
+<p>&emsp;&emsp;——Dirac, The Principles of Quantum Mechanics</p>
+</blockquote>
+<p>&emsp;&emsp;并且，状态叠加原理比薛定谔方程更基本：</p>
+<blockquote>
+<p><em>以上这些假定，构成了量子力学的一个首要基本原理，称为<strong>状态叠加原理</strong>。从这个原理可以立刻知道，波函数所满足的一切方程必须保持线性。</em></p>
+<p>&emsp;&emsp;——朗道、栗弗席兹，《量子力学（非相对论理论）》</p>
+</blockquote>
+<p>&emsp;&emsp;当一个态有其他两个态叠加而成时，按某种不精确的说法，这个态应当具有介于两个原先的态的性质之间的某些性质，并且它们与其中某一态的性质较多或较少地接近，这需要根据叠加时的“权重”的大小来确定。在叠加过程中，如果原先的两个态相位已知，加上确定的相位差，那么新的态就可以完全确定。而权重与相位的确切含义，由一定的数学理论提供。比如当光的两个平面偏振态相互叠加，相位、权重的不同将会导致线偏振、圆偏振或者椭圆偏振的区别。</p>
+<p>&emsp;&emsp;概率的干涉和光的干涉也是相同的：<br>$$<br>    \begin{aligned}<br>    \mathbb{P}(x) &amp;&#x3D; |\alpha \psi_1 + \beta\psi_2|^2\<br>    &amp;&#x3D; |\alpha \psi_1| ^2 +  |\beta\psi_2| ^2 + \alpha^* \psi_1^* \beta\psi_2 + \alpha\psi_1 \beta^<em>\psi_2^</em><br>    \end{aligned}<br>$$<br>干涉项就是最后的两项，它不一定是正数，对概率的简单相加作了一定的干涉修正（a correction of the classical probability addition）——相加的不是概率，而是波函数。波函数的模方才是概率（这将导致贝尔不等式）。</p>
+<p>&emsp;&emsp;此时，如果将一些不同频率的平面波函数叠加并归一化，粒子位置的概率密度将会逐渐呈现 $\delta$ 函数的形式：</p>
+<p><img src="https://note.youdao.com/yws/api/personal/file/WEBcc07fa7c7a910f7d5bf36fc036e65949?method=download&shareKey=1790ea63e926bf4e18dd4b742ee7d31b" alt="叠加"></p>
+<blockquote>
+<p><em>The interference of different momentum leads to the certainty of the position of the particle.</em></p>
+<p>&emsp;&emsp;——8.04, Quantum Physics I, Allan Adams, MIT</p>
+</blockquote>
+<p>&emsp;&emsp;对于波函数取 $\delta$ 函数的粒子（也就是说它的位置是完全确定的），直觉上来看它并没有任何波长可言，所以也无法通过 de Broglie 关系得到它的动量。这时就需要使用 Fourier 变换来处理。</p>
+<h3 id="Fourier-Transform"><a href="#Fourier-Transform" class="headerlink" title="Fourier Transform"></a>Fourier Transform</h3><p><em><strong>Any wave function f(x) can be built by superpositioning enough plane waves of the form $e^{ikx}$:</strong></em><br>$$<br>    \psi(x) &#x3D; \frac{1}{\sqrt{2\pi}}\int_{-\infty}^{\infty}\varphi(k)e^{ikx}dk<br>$$</p>
+<p>$$<br>    \varphi(k) &#x3D; \frac{1}{\sqrt{2\pi}}\int_{-\infty}^{\infty}\psi(x)e^{-ikx}dx<br>$$</p>
+<p>&emsp;&emsp;其中 $\varphi(k)$ 可以理解为波矢为 $k$ 的波的<strong>振幅和相位</strong>，所以波函数可以看做是具有一定动量 $P &#x3D; \hbar k$ 的多个波函数的叠加（平面波具有确定的动量）。</p>
+<p>&emsp;&emsp;Fourier 变换是一种正交变换（幺正变换），如果变换前的波函数是归一化的，那么变换后的函数仍然是归一化的，并且变换后只是更换了<strong>表象</strong>，将粒子的运动状态换到了动量“基”下而已。</p>
+<p>&emsp;&emsp;这时，就可以清晰地看到不确定性关系的作用：对不确定位置的平面波作傅里叶变换，得到 $\delta$ 函数——具有确定的动量；对确定位置的 $\delta$ 函数作傅里叶变换 ，得到常数——具有不确定的动量。</p>
+<p>&emsp;&emsp;所以，Fourier 变换的数学形式同样也刻画了微观粒子的波粒二象性。</p>
+<p>&emsp;&emsp;常用积分与 Fourier 变换：<br>$$<br>    \int_{-\infty}^{\infty} e^{ikx}dx &#x3D; 2\pi \delta(k)<br>$$<br>$$<br>    \delta (x) \leftrightarrow \frac{1}{\sqrt{2\pi}}<br>$$</p>
+<p>$$<br>    e^{ik_1x} \leftrightarrow \sqrt{2\pi}\delta(k_1-k)<br>$$</p>
+<blockquote>
+<p><em>Notice:</em></p>
+<ol>
+<li><em>normalize: $\int |\psi(x)|^2dx &#x3D; 1$</em></li>
+<li><em>All reasonable $\psi(x)$ are equally reasonable wave functions (for the third postulate).</em></li>
+<li><em>Some wave functions are more equal than others, in the sense that they have more simple interpretations.</em></li>
+</ol>
+</blockquote>
+<p>&emsp;&emsp;在这个意义下，所有合理的波函数都能拆解为一系列 more equal (easily interpretable) 的波函数，就像 Fourier 变换那样：</p>
+<p>$$<br>    \psi(x) &#x3D; \frac{1}{\sqrt{2\pi}}\int_{-\infty}^{\infty}\varphi(k)e^{ikx}dk<br>$$<br>这里叠加的波函数都具有确定的动量 $\hbar k$ ，所以它们有更简单的 interpretation——<strong>粒子的一切状态都能表达为具有确定动量的粒子所处状态的叠加</strong>。</p>
+<p>同样地，如果使用 $\delta$ 函数做叠加：<br>$$<br>    \psi(x) &#x3D; \int_{-\infty}^{\infty}\psi(x_0)\delta(x-x_0)dx_0<br>$$<br>所以<strong>粒子的一切状态也能表达为具有确定位置的粒子所处状态的叠加</strong>。这再次表明，位置和动量是描述粒子状态的不同基，各自完备，但水火不容（在线性代数中有基向量的替换定理，可以将一组基中的某一个向量替换为另一组基的某一个向量从而组成新的基。但这在量子力学中是不行的）。</p>
+<blockquote>
+<p><em>波函数是波矢在坐标空间中的表象，trace 在坐标空间中以积分的形式存在。</em></p>
+<p><em>一个算符的对应矩阵是无穷维的，但 trace 仍然收敛</em>。</p>
+<p>&emsp;&emsp;——Yijing Yan, Quantum Physics, 2022.8.31</p>
+</blockquote>
+<p>&emsp;&emsp;然而，稍作分析可以发现上述动量基和坐标基并不满足波函数连续或者模方可积的条件（见 De Broglie Relation 一节的最后部分）——这是纯粹数学上的完备性在起作用：模方可积空间作为完备的赋范空间（Banach 空间），其中每一个 Cauchy 列都收敛。而这些不满足波函数条件的“基”，则作为 Banach 空间中的函数列极限存在其中（参见 Postulate III: Superposition 中的图片）。</p>
+<p>&emsp;&emsp;或者简单地说，实际上我们并不能将粒子的坐标确定到 $\delta$ 函数所描绘的那么精准，因为还有不确定度关系的存在。</p>
+<p>&emsp;&emsp;对傅里叶分析更详细的讨论参见本博客 Fourier Analysis 一文。</p>
+<h3 id="Probability-Theory-and-Uncertainty"><a href="#Probability-Theory-and-Uncertainty" class="headerlink" title="Probability Theory and Uncertainty"></a>Probability Theory and Uncertainty</h3><blockquote>
+<p><em>海森堡提出，只有认为我们的实验能力有某种前所未知的基本极限，才能使得当时发现的新的自然界的定律协调一致。</em></p>
+<p>&emsp;&emsp;——Richard Feymann, The Feymann Lectures on Physics, Volume III, 上海科学技术出版社<br>$$<br>    EY &#x3D; \langle g(X) \rangle  &#x3D; \int g(x)\mathrm{d}F(x) &#x3D; \int g(x)f(x)\mathrm{d}x<br>$$</p>
+</blockquote>
+<p>$$<br>    \text{Var}X &#x3D; E(X- EX)^2 &#x3D; EX^2 - E^2X &#x3D; \langle X^2 \rangle - \langle X \rangle  ^2<br>$$</p>
+<p>所以 $X$ 的不确定度 $\Delta X$ 就定义为给定概率密度 $f(x)$ 后 $X$ 的标准差：</p>
+<p>$$<br>    (\Delta X)^2&#x3D; \text{Var}X &#x3D; \langle X^2 \rangle - \langle X \rangle  ^2<br>$$</p>
+<h3 id="Postulate-IV-Operator"><a href="#Postulate-IV-Operator" class="headerlink" title="Postulate IV: Operator"></a>Postulate IV: Operator</h3><h4 id="Each-observable-is-associated-with-an-operator"><a href="#Each-observable-is-associated-with-an-operator" class="headerlink" title="Each observable is associated with an operator"></a>Each observable is associated with an operator</h4><p>将概率论的结论移植到量子力学中：<br>$$<br>    \langle\psi | X| \psi \rangle &#x3D; \langle X \rangle <em>{\psi} &#x3D; \int</em>{-\infty}^{\infty}x|\psi(x)|^2dx<br>$$</p>
+<p>$$<br>    \langle f(X) \rangle <em>{\psi} &#x3D; \int</em>{-\infty}^{\infty}f(x)|\psi(x)|^2dx<br>$$</p>
+<p>&emsp;&emsp;所以一个物理量只要是位置的函数，那么我们就能通过积分得到它的期望值。但是动量的期望值是无法直接从位置波函数中得到的，我们需要进行 Fourier 变换，将粒子变换到动量表象下再来求解。但是每次都这样做非常麻烦。所以后面的讨论会将动量这个物理量对应于一个算符（operator）让我们在坐标表象下也能简单求解动量期望值：<br>$$<br>    \frac{\hbar}{i}\frac{\partial }{\partial x} \leftrightarrow p<br>$$</p>
+<p>$$<br>    \langle p \rangle &#x3D; \int_{-\infty}^{\infty}\psi^*(x)\frac{\hbar}{i}\frac{\partial }{\partial x}\psi(x)dx<br>$$</p>
+<blockquote>
+<p><em>This set of $\leftrightarrow$ here, it’s sort of introduction, but after a while you just say $\hat{p}$ <strong>IS($\equiv$)</strong> $\frac{\hbar}{i}\frac{\partial }{\partial x}$, end of stories.</em></p>
+<p>&emsp;&emsp;——8.04, Quantum Physics I, Allan Adams, MIT</p>
+</blockquote>
+<blockquote>
+<p><em>然而，若有一个物理量，既是动量 p 的函数，又是坐标 x 的函数，比如能量 $E &#x3D; \frac{p^2}{2m}+V(x)$ 就是这样的量，怎样求它们的平均？请看下面的<strong>计算技巧</strong>。</em></p>
+<p>&emsp;&emsp;——赵凯华，量子物理（第二版） </p>
+</blockquote>
+<p>曾谨言教材中也是将傅里叶变换代入积分中，再交换积分次序得到的这一关系，并不是从某处推导得到的。所以 $\frac{\hbar}{i}\frac{\partial }{\partial x} \leftrightarrow p$ 属于物理学家的<strong>灵光乍现</strong>，但它和实验符合的很好，甚至在经典力学的极限下将会回到 $p &#x3D; mv$ 上来。</p>
+<p>&emsp;&emsp;不过，这一做法之所以能成功的理论基础是 Noether 定理：</p>
+<h4 id="Noether-Theorm"><a href="#Noether-Theorm" class="headerlink" title="Noether Theorm"></a>Noether Theorm</h4><blockquote>
+<p><em>To every symmerty is associated a conserved quantity.</em></p>
+<p><em>space translation: $x\rightarrow x+L$, there is $\dot{p} &#x3D; 0$</em></p>
+<p><em>time translation: $t\rightarrow t+T$, there is $\dot{E} &#x3D; 0$</em></p>
+<p><em>rotation: $\vec{x}\rightarrow R\vec{x}$, there is $\dot{L} &#x3D; 0$</em></p>
+</blockquote>
+<p>&emsp;&emsp;所以通过以下的逻辑，不难理解为什么对位移的导数可以和动量联系起来：</p>
+<blockquote>
+<ol>
+<li>An infinitesimal translation in $x$ is generated by $\partial_x$</li>
+<li>Noether: Translation in $x$ $\leftrightarrow$ momentum</li>
+<li>$\partial_x \backsim p$</li>
+</ol>
+</blockquote>
+<p>所以有<br>$$<br>    \partial_x \backsim p,;;\partial_t\backsim E,;;\partial_\theta \backsim L_z<br>$$</p>
+<p>&emsp;&emsp;上面使用 Noether 定理也不是推导，只是从另一个角度暗示了这种关系，让我们对它的正确性更有把握：</p>
+<blockquote>
+<p><em>I’m going to <strong>declare</strong> that in quantum mechanics-you cannot stop me- $p$ is repsented by an operator, and this is a declaration. This is not someting we derive, this is someting we declare. We call it a model, and we use it to calculate stuff and see if it fits the real world.</em></p>
+<p>&emsp;&emsp;——8.04, Quantum Physics I, Allan Adams, MIT</p>
+</blockquote>
+<p>$$<br>    \hat{p} \equiv \frac{\hbar}{i}\frac{\partial }{\partial x}<br>$$</p>
+<p>&emsp;&emsp;如果我们将这个算符作用于具有确定动量 $\hbar k$ 的平面波 $\psi(x) &#x3D; e^{ikx}$ ，将会得到<br>$$<br>    \hat{p} \psi(x) &#x3D; \hbar k \psi(x)<br>$$</p>
+<p>所以，我们并不能认为将算符 $\hat{p}$ 作用于波函数 $\psi (x)$ 就能得到想要的动量——那样一来，$\hat{p}\psi(x)$ 是位置的函数，但是位置和动量是不能具有确定的函数关系的。正确的理解应当是这样：</p>
+<blockquote>
+<p><em>A state with a definite momentum has the property that when you hit it with the operation associated with the momentum, you get back the same funciton times a constant, and the constant is exactly the momentum we ascribe to that plane wave.</em></p>
+<p>&emsp;&emsp;——8.04, Quantum Physics I, Allan Adams, MIT</p>
+</blockquote>
+<p>那么对于下面的叠加态<br>$$<br>    \psi &#x3D; \frac{1}{\sqrt{2}}e^{ik_1x} + \frac{1}{\sqrt{2}}e^{ik_2x}<br>$$<br>如果将动量算符作用其上似乎并不会得到 $\hat p \psi &#x3D; C \psi$ 的形式，那么它动量的平均值是多少呢？我们先暂时放下这个问题，先讨论一些数学。</p>
+<h4 id="What-Operators-Are-？"><a href="#What-Operators-Are-？" class="headerlink" title="What Operators Are ？"></a>What Operators Are ？</h4><p>&emsp;&emsp;前面不加解释地频繁使用了“算符”这一概念，进行了许多的 physical intuition，现在有必要解释一下：</p>
+<blockquote>
+<p><em>It’s a basis of much intuition, it’s a mathematical way of thinking operators, and we will sometimes use it as a crutch.</em> </p>
+<p><em>The idea is that basically operarors are things that add to objects and move them, scramble them, do something to them.</em></p>
+<p>&emsp;&emsp;——8.04, Quantum Physics I, Allan Adams, MIT</p>
+</blockquote>
+<p>&emsp;&emsp;以算符形式表达的东西其实并不陌生，很多东西都可以写作算符形式，比如以列向量为对象，那么左乘矩阵就是一个 operation （算符的英文为 operator）。又如 Taylor 展开可以写作：<br>$$<br>    \begin{aligned}<br>    f(x+l) &amp;&#x3D; f(x) + l \frac{\partial f}{\partial x} + \frac{l^2}{2}\frac{\partial^2 f}{\partial x^2}  + \frac{l^3}{6}\frac{\partial^3 f}{\partial x^3}  + \cdots\<br>    &amp;&#x3D;\left(1 + l \frac{\partial }{\partial x} + \frac{l^2}{2}\frac{\partial^2 }{\partial x^2}  + \frac{l^3}{6}\frac{\partial^3 }{\partial x^3}  + \cdots\right) f(x)\<br>    &amp;&#x3D;e^{l\partial_x}f(x)<br>    \end{aligned}<br>$$<br>&emsp;&emsp;此时 $e^{l\partial_x}$ 便是一个算符——幂的位置是一个算符，其实也可以将幂的位置换成矩阵，$e$ 的矩阵次幂也是同样的含义：<br>$$<br>    e^{A} \bm{x}&#x3D; \left(I + A + \frac{1}{2}A^2 + \frac{1}{6}A^3 + \cdots\right)\bm{x}<br>$$<br>&emsp;&emsp;这将是多项式理论和线性代数之间的桥梁。 $\delta$ 函数作为一个广义函数，本身也是一个算符——它必须作用在常见函数上才能体现出它的价值 [<em>季孝达《数学物理方程》</em>]：按照下面的定义，它给出函数 $f(x)$ 在 $a$ 点的值：<br>$$<br>    \hat{\delta}<em>af(x) &#x3D; \int</em>{-\infty}^{\infty}\delta(x-a)f(x) dx &#x3D; f(a)<br>$$</p>
+<p>&emsp;&emsp;量子力学中的算符都是线性算符，这是 Postulate III 提出的隐性要求（参见朗道量子力学的评述），叠加原理天然地和线性性有着密不可分的关系。</p>
+<p>&emsp;&emsp;算符也有本征值和本征函数，它们的可以可数，也可以不可数；可以是实数，也可以是复数：<br>$$<br>    \hat{A}f(x) &#x3D; af(x),;;a\in \mathbb{C}<br>$$<br>所以很显然，$e^{ikx}$ 是算符 $\hat{p}$ 的本征函数，而 $\hbar k$ 就是相应本征值：<br>$$<br>    \hat{p} e^{ikx} &#x3D; \hbar k \times e^{ikx}<br>$$<br>当我们需要一个物理量的期望值时，只需将它对应的算符夹在 $\psi^*(x)$ 和 $\psi(x)$ 中间，再做积分：<br>$$<br>    \langle A \rangle &#x3D; \int_{-\infty}^{\infty}\psi^*(x)\hat{A}\psi(x)dx<br>$$<br>所以 $\Delta A$ 现在是 well-defined 的了：<br>$$<br>    (\Delta A)^2&#x3D; \langle A^2 \rangle - \langle A \rangle^2 &#x3D; \int_{-\infty}^{\infty}\psi^*(x)\hat{A}^2\psi(x)dx  - \left( \int_{-\infty}^{\infty}\psi^*(x)\hat{A}\psi(x)dx \right) ^2<br>$$</p>
+<p>&emsp;&emsp;厘清了算符这个概念，现在我们给出位置算符和能量算符：<br>$$<br>    \hat{x} &#x3D; x\times<br>$$<br>$$<br>    \begin{aligned}<br>    \hat E &#x3D; \frac{\hat{p}^2}{2m} + \hat{V}(x)<br>    &#x3D; -\frac{\hbar^2}{2m}\frac{\partial ^2}{\partial x} + \hat{V}(x)\<br>    \hat E \psi(x)&#x3D; -\frac{\hbar^2}{2m}\frac{\partial ^2\psi}{\partial x} + \hat{V}(x)\psi(x)<br>    \end{aligned}<br>$$</p>
+<h4 id="Commutation"><a href="#Commutation" class="headerlink" title="Commutation"></a>Commutation</h4><p>&emsp;&emsp;算符的作用顺序不能随意交换，比如：<br>$$<br>    [\hat{x},\hat{p}]f(x) \equiv (\hat{x}\hat{p}-\hat{p}\hat{x})f(x) &#x3D; -\frac{\hbar}{i}f(x)<br>$$</p>
+<p>这时我们得到<br>$$<br>    [\hat{x},\hat{p}] &#x3D; i\hbar<br>$$</p>
+<blockquote>
+<p><em>It’s the fact that x and p are imcompatible operators, as you will see later, they don’t commute,their order matters!<br>What’s going to mean is that when you measure one, you have difficulty measuring the other. They interfere, they cannot be measured simultaniously.</em></p>
+<p><em>This is DEEP, this is SCARY, because unlike other commutators, no finite matrix can fit this equation, leaving only matrixes with infinite dimentions. It’s the beginning of quantum mechanics.</em></p>
+<p>&emsp;&emsp;——8.04, Quantum Physics I, Allan Adams, MIT</p>
+</blockquote>
+<h3 id="Postulate-V-Expansion"><a href="#Postulate-V-Expansion" class="headerlink" title="Postulate V: Expansion"></a>Postulate V: Expansion</h3><p><strong>Given an observable $\hat{A}$ and its eigenfuction $\phi_a(x)$，two things happen:</strong></p>
+<p><strong>1. It can be expanded as $\psi(x) &#x3D; \sum C_a\psi_a(x)$</strong></p>
+<p><strong>2. The probability maesuring $A$ and giving $a$ is $|C_a|^2$</strong></p>
+<p>&emsp;&emsp;You can expand a wave fuction, and the coefficients gives the probability of measuring these numbers.</p>
+<p>前面早已指出：<br>$$<br>    \psi(x) &#x3D; \frac{1}{\sqrt{2\pi}}\int_{-\infty}^{\infty}\varphi(k)e^{ikx}dk<br>$$</p>
+<p>$$<br>    \psi(x) &#x3D; \int_{-\infty}^{\infty}\psi(x_0)\delta(x-x_0)dx_0<br>$$<br>所以这个假设和 Fourier 变换的数学形式是一致的。这个算符可以是坐标算符、动量算符、能量算符，或者任何一个物理量对应的算符——它们的本征函数形式不同，但都是函数空间中的完备正交基。</p>
+<h4 id="Mathematical-Coherence"><a href="#Mathematical-Coherence" class="headerlink" title="Mathematical Coherence"></a>Mathematical Coherence</h4><p>&emsp;&emsp;叠加原理告诉我们，同一系统两个可能波函数的线性组合也是系统可能的波函数：<br>$$<br>    \psi(x) &#x3D; \sum C_i \phi_i(x)<br>$$<br>但这并没有说明 $\phi_i(x)$ 是否是某个算符的征函数。而现在 Postulate V 告诉我们，这些叠加的函数可以是某个算符的本征函数，所以既有<br>$$<br>    \hat{A}\phi(x) &#x3D; a \varphi_a(x)<br>$$<br>也有<br>$$<br>    \psi(x) &#x3D; \sum_a C_a \varphi_a(x)<br>$$<br>这看起来并不显然，但稍微复习数理方程的知识就会明白：</p>
+<blockquote>
+<p>Sturm-Liouville Theorm：</p>
+<ol>
+<li><p>本征值非负可数</p>
+</li>
+<li><p>本征函数正交完备</p>
+</li>
+</ol>
+</blockquote>
+<p>&emsp;&emsp;所以，一个波函数既能表示为这一组物理量对应本征态的叠加，又能表示为另一组物理量对应本征态的叠加。那么<strong>对一个粒子进行测量，就代表着事先选定了一组基，让被测量的波函数向这组基展开</strong>（见 Postulate VI）。</p>
+<p>&emsp;&emsp;<strong>展开系数 $C_a$ 的模方 ，作为本征态 $\varphi_a(x)$ 的“含量”，就是测量值为 $a$ 的概率</strong>。举例而言，回忆波函数的概率解释，粒子位置的概率密度是 $|\psi(x)|^2$，根据 Fourier 变换可计算出动量的概率密度 $|\varphi(p)|^2$ 。但 Fourier 变换的也呈现线性叠加的形式：<br>$$<br>    \psi(x) &#x3D; \frac{1}{\sqrt{2\pi}}\int_{-\infty}^{\infty}\varphi(k)e^{ikx}dk<br>$$<br>所以 $\varphi(p)$ 恰是这里一般化了的 $C_a$ 。$C_a$ 的一般计算方法为<br>$$<br>    C_a &#x3D; (\varphi_a|\psi) &#x3D; \int_{-\infty}^{\infty} \varphi_a^*(x)\psi(x) dx<br>$$<br>这和 Fourier 逆变换是一致的：<br>$$<br>        \varphi(k) &#x3D; \int_{-\infty}^{\infty}\left(\frac{e^{ikx}}{\sqrt{2\pi}}\right)^* \psi(x)dx<br>$$ </p>
+<p>联想到傅里叶分析中的 Bessel 不等式和 Parseval 等式，不难看出动量表象下的波函数也是归一化的，它对位置基的展开系数也是对系统测量位置时的概率密度。</p>
+<p>&emsp;&emsp;Sturm-Liouville 定理之所以成立，是由于 Hermite 算符的缘故：由于<a target="_blank" rel="noopener" href="http://home.ustc.edu.cn/~ustcxkc/2022/07/19/The_Separation_of_Variables/">算符固有值问题就是函数空间中自共轭算子的特征值问题</a> [7]，那么线性代数的结论就可以搬运到这里来：</p>
+<blockquote>
+<p><em><strong>Hermite 方阵的特征值都是实数，属于不同特征值的特征向量相互正交</strong></em>。</p>
+</blockquote>
+<p>&emsp;&emsp;如果 $\psi_1$ 和 $\psi_2$ 是动量算符具有相同本征值 $p_0$ 但线性无关的本征函数，那么叠加态<br>$$<br>    \psi_*(x) &#x3D; \alpha\psi_1(x) + \alpha\psi_2(x)<br>$$<br>也是这个本征值的本征函数——特征子空间的维数是 $2$ ，对应一个二阶 Jordan 块（所以此时不可相似对角化为对角阵）。</p>
+<p>&emsp;&emsp;处于同一特征子空间中的波函数具有相同的能量（本征值），这就叫<strong>简并</strong>（degenerate），此时算符的这个本征值对应的特征子空间的维数是大于 $1$ 的，所以其中任意两个函数虽然线性无关，但是不能保证相互正交。但是完备赋范空间总是存在这样一组正交基（谱定理），找到这组正交基的方法是 Schmidt 正交化。</p>
+<h3 id="Postulate-VI-Measurement"><a href="#Postulate-VI-Measurement" class="headerlink" title="Postulate VI: Measurement"></a>Postulate VI: Measurement</h3><p><strong>Upon measuring an observable A associated with $\hat{A}$, two things happen:</strong></p>
+<p><strong>1. The measured value is one of the eigenvalues of $\hat{A}$.</strong></p>
+<p><strong>2. After measurement, system collapses into $\psi_a$, the eigenfunction corresponding to the measured value $a$, though at the beginning the state is a superposition of many.</strong></p>
+<blockquote>
+<p><em>However, acting on a funciton with an operator, has nothing what so ever to do with measuring that associated variable.</em></p>
+<p><em>This is a wave funciton. I want to know its momentum. I act the operator on it. <strong>COMPLETELY WRONG</strong>!</em></p>
+<p>&emsp;&emsp;——8.04, Quantum Physics I, Allan Adams, MIT</p>
+</blockquote>
+<p>&emsp;&emsp;例如，对处于 $\psi (x) &#x3D; \delta (x-x_0)$ 的粒子测量它的位置：<br>$$<br>    \hat{x}\delta(x-x_0) &#x3D; x\delta(x-x_0) &#x3D; x_0\delta(x-x_0)<br>$$<br>可见，本征值就是 $x_0$ ，但这并不意味着测量粒子的状态和算符对它的作用有什么关联。</p>
+<p>&emsp;&emsp;这时我们发现，在计算本征函数的过程中，Sturm-Liouville 定理告诉我们：<strong>一个算符的本征值和本征函数是由算符的内禀性质以及边界条件决定的，和将要用它“凑”成的波函数 $\psi(x)$ 毫无关联</strong>——$\psi(x)$ 只在需要 $C_a$ 的时候参与计算，这意味着 $\psi(x)$ 本身只能决定测量值的概率分布，不能决定测量值的大小。</p>
+<p>&emsp;&emsp;这里需要注意的一点是，如果对处于两个本征态的叠加态施加一个观测，得到的结果永远是两个本征态对应本征值之一，而不能得到任何其他的中间值：</p>
+<blockquote>
+<p><em>由叠加而形成的态所具有的中间特征，通过由观测得到某一特定结果的概率处于原先两个态的相应概率中间表现出来，而不是观测结果本身处于原先两个态的相应结果的中间。</em></p>
+<p>&emsp;&emsp;——Dirac, The Principles of Quantum Mechanics</p>
+</blockquote>
+<h4 id="Collapse"><a href="#Collapse" class="headerlink" title="Collapse"></a>Collapse</h4><p>&emsp;&emsp;关于波函数的坍缩：</p>
+<blockquote>
+<p><em>If we go about measuring some observable $A$, then we’ll always, always observe precisely one eigenvalue of that ooperator. And upon measuring that eigenvalue, you can be confident, that that’s the actual value of the system I observe. It remains if I measure subsequently. It’s no longer superposiiton, now it is a wave function corresponding to a definite value of the observable.</em></p>
+<p><em>Measurement changes the superposition into a specific eigenfunction, one that we are measuring.</em></p>
+<p>&emsp;&emsp;——8.04, Quantum Physics I, Allan Adams, MIT</p>
+</blockquote>
+<p>&emsp;&emsp;现在，考虑这样一个问题：既然波函数在观测之后会坍缩为观测量对应的那个本征函数，那么如果一直不停地观测，那么这个波函数就永远不会开始发展——它一直会在那个本征函数上面。这就叫 <em>量子芝诺效应</em>。</p>
+<h4 id="Collapse-and-Measurement-Accuracy"><a href="#Collapse-and-Measurement-Accuracy" class="headerlink" title="Collapse and Measurement Accuracy"></a>Collapse and Measurement Accuracy</h4><p>&emsp;&emsp;人类的测量精度总是有限的，根据能量-时间不确定关系<br>$$<br>    \Delta E \Delta t \geq \hbar<br>$$<br>可知，我们当然可以测得精确到小数点后任意位数的能量值 E ，代价则是需要等待无限长的时间。这意味着实际上波函数永远不会真的坍缩到能量观测值对应的本征函数，因为这个能量值并不是完全准确的。</p>
+<p>&emsp;&emsp;这也表明我们无法通过测量来将某粒子的波函数“重整”到我们想要的本征函数上来，比如能量本征态或者定态（见 Solution 一节）。</p>
+<p>&emsp;&emsp;经过测量的波函数虽然不是那么的“本征”，但它仍然是一些本征函数的线性叠加。那么下一个问题就是：波函数被测量后是否还会继续变化？准确地说，如果将测量想象为瞬时过程，那么波函数在测量发生的时刻 $t^*$ 立即坍缩为某个本征函数：$\psi(x,t^*) &#x3D; \phi_a(x)$ ，但是波函数并不会一直停在那里，而是按照 schrödinger equation 进行演化。</p>
+<h3 id="Postulate-VII-Schrodinger-Equation"><a href="#Postulate-VII-Schrodinger-Equation" class="headerlink" title="Postulate VII: Schrödinger Equation"></a>Postulate VII: Schrödinger Equation</h3><h4 id="Basic-“Derivation”"><a href="#Basic-“Derivation”" class="headerlink" title="Basic “Derivation”"></a>Basic “Derivation”</h4><p>&emsp;&emsp;薛定谔方程同样是假设，而不能被什么东西推导出来，不过一些事实暗示了有这样的方程存在：</p>
+<blockquote>
+<p><em>Unitary time evolution, someting that I havn’t explained what it is, implies the Schrödinger equation.</em></p>
+<p>&emsp;&emsp;——8.04, Quantum Physics I, Allan Adams, MIT</p>
+</blockquote>
+<p>&emsp;&emsp;再看一眼德布罗意关系：<br>$$<br>    \begin{aligned}<br>    E &amp;&#x3D; \hbar \omega\<br>    \vec{p} &amp;&#x3D; \hbar k<br>    \end{aligned}<br>$$<br>综合前述，当动量算符作用于平面波函数 $e^{i(kx-\omega t)}$ 时，就得到它的本征值 $\hbar k$ ，那么能量算符作用其上，要想得到 $\hbar \omega$ ，它必须是<br>$$<br>    \hat{E} &#x3D; i\hbar \frac{\partial }{\partial t}<br>$$<br>Noether 定理同样给出了这个暗示：时间平移不变性导致能量守恒，所以对时间 $t$ 的导数就和能量相关。</p>
+<p>&emsp;&emsp;将动量和能量放在一起看一看：<br>$$<br>    \begin{aligned}<br>    \frac{\hbar}{i}\frac{\partial }{\partial x}\psi(x,t) &amp;&#x3D; p \psi (x,t)\<br>    i\hbar \frac{\partial }{\partial t} \psi(x,t) &amp;&#x3D; E \psi(x,t)<br>    \end{aligned}<br>$$<br>看起来就像是在告诉我们，能量 $E$ 怎样随时间变化：如果波函数和它的能量已知，那么 $i\hbar \frac{\partial }{\partial t} \psi(x,t)$ 就像是波函数过一会后的形态。</p>
+<p>当我们不知道波函数的能量值，Just replace the $E$ with $\hat{E}$, <strong>DONE</strong>：<br>$$<br>    i\hbar \frac{\partial }{\partial t} \psi(x,t) &#x3D; \hat{E} \psi(x,t)<br>$$<br>$$<br>   i\hbar \frac{\partial }{\partial t} \psi(x,t) &#x3D; \left(-\frac{\hbar^2}{2m}\frac{\partial ^2}{\partial x} + \hat{V}(x) \right)\psi(x,t)<br>$$</p>
+<ol>
+<li>Linear：线性方程的两个解的线性组合也是方程的解，这和线性叠加假设是一致的。</li>
+<li>Unitary：非相对论情形下实物粒子不会产生或者湮灭，所以薛定谔方程可以导出定域概率守恒（<em>曾谨言，量子力学，P47</em>），不过霍金效应可能会让概率不守恒，但那是理论家们的事情。</li>
+<li>Deterministic：存在唯一性定理在经典力学中保证粒子的位置和动量的演化确定的，但在量子力学中只能保证粒子波函数——位置或者动量概率分布的演化，是确定的。</li>
+</ol>
+<p>&emsp;&emsp;显然，它是线性方程，所以和线性叠加假设不矛盾。然而经典力学中的大量方程并不是线性方程，还有可能导致混沌的发生——这是量子力学和经典力学的显著区别之一。</p>
+<p>&emsp;&emsp;薛定谔方程描述的是系统概率分布随时间的变化情况，这个概率分布的变化是确定的，而不像 Langevin 方程——里面存在随机过程项。</p>
+<p>&emsp;&emsp;薛定谔方程关于时间的导数是一阶的，它的求解也只需要一个初始条件即可——因为同时指定位置和位置的导数（动量），是非法的。</p>
+<h4 id="Relation-to-Superposition-Priciple"><a href="#Relation-to-Superposition-Priciple" class="headerlink" title="Relation to Superposition Priciple"></a>Relation to Superposition Priciple</h4><p>&emsp;&emsp;然而薛定谔方程是不是线性的，其实和线性叠加假设没有关系：“薛定谔方程的两个解的线性组合还是解”这句话，和“描述系统状态的两个波函数的线性叠加仍然是系统一个可能的波函数”这句话其实是没有关系的，只是为了让量子力学的数学形式符合我们的线性叠加假设，才使得出现在方程中的各种算符采取线性的形式。因为这样才能声称：薛定谔方程的解 <em><strong>没有遗漏地</strong></em> 描述了量子系统的状态，而这是微分方程理论的基本结论之一。否则,考虑一个非线性的薛定谔方程：</p>
+<p>$$<br>    i\hbar \frac{\partial }{\partial t} \psi(x,t) &#x3D; \hat{E} \psi(x,t) + |\psi(x,t)|^2<br>$$<br>它不是线性方程，所以它的解也不构成线性空间，但是我们同样可以让线性叠加原理成立，但这样的线性组合 $C_1\psi_1 + C_2\psi_2$ 可能不再是这个非线性薛定谔方程的解。</p>
+<p>&emsp;&emsp;注意，$\psi$ 是一个复数，所以它和普通的波动方程（对时间的二阶导数）不同：对时间只有一阶导数——波动的相位蕴含在了复数中；它也是确定的，已知初始波函数 $\psi(x,0)$ 就能计算以后波函数。</p>
+<p>&emsp;&emsp;现在我们来回答上一节最后的问题：波函数坍缩后应当怎么演化。坍缩后的波函数，是物理量对应算符以测量值为本征值的本征函数，这相当于给出了波函数的初始条件 $\psi(x,t^*) &#x3D; \varphi(x)$ ，那么根据薛定谔方程，波函数对时间的导数就是将能量算符作用于波函数后的值，而能量算符是不含时间的：<br>$$<br>    \hat{E} &#x3D; -\frac{\hbar^2}{2m}\frac{\partial^2}{\partial x^2} + \hat{V}(x)<br>$$<br>如此循环，就能得到波函数此后的演化：<em>Give the full knowledge now, I can have the full knowledge later.</em></p>
+<h4 id="Decoherence"><a href="#Decoherence" class="headerlink" title="Decoherence"></a>Decoherence</h4><p>&emsp;&emsp;此处有一个“小”矛盾：系统状态的时间演化貌似有两种定义：波函数既能因观测而坍缩——看起来是不连续的瞬间变化，它按照概率分布 $|C_a|^2$ 给出观测值；又能依照薛定谔方程连续地演化，而且是确定性的。这也是量子力学难以被人理解的原因之一——似乎当你不看它的时候，系统服从确定性，但一旦你看它一眼，它转而服从随机性。</p>
+<blockquote>
+<p><em>Measurement comes with probablistic outcomes, and lead to the collapse of the wave function. On the other hand, when you are not looking, system evolves deterministically.</em></p>
+<p><em>Don’t worry about it, it makes the prediciton, it fits the data, so work with me.</em></p>
+<p><em>That is trimph, but it’s deeply disconcerting.</em></p>
+<p><em>But “SHUT UP , AND CALCULATE” is some kind of irresponsibility</em></p>
+<p>&emsp;&emsp;——8.04, Quantum Physics I, Allan Adams, MIT</p>
+</blockquote>
+<p>&emsp;&emsp;退相干理论希望解决这个矛盾。这个理论认为，测量过程实际上是一个宏观经典系统：“仪器”，和被观测的这个量子系统的相互作用。显然，仪器由宏观大量的粒子组成，它不仅包含组成测量工具的粒子、组成观测者的粒子，还包含空气中的原子分子。那么这样一来，单个粒子在如此庞大数量的粒子相互作用的时候，薛定谔方程是否退化为由观测导致的坍缩？</p>
+<blockquote>
+<p>&emsp;&emsp;对电子运动作出定量描述的可能性，要求同时存在一些物理客体，这些客体在足够精确的范围内服从经典力学。如果一个电子和这样的“经典客体”相作用，后者的状态一般来讲会有所变化，这一变化性质及大小依赖于电子的状态，从而就可以用来定量描述电子的状态。</p>
+<p>&emsp;&emsp;因而，经典客体通常称为<strong>仪器</strong>，它和电子的作用就称为<strong>测量</strong>……量子力学中所谓的测量，我们总是把它理解为与任何观测者无关的发生于经典客体和量子客体之间的任一相互作用过程。</p>
+<p>&emsp;&emsp;由此可见，量子力学在物理理论中占有一个很不平常的地位：它把经典力学作为一种极限情形而包含在内，但在它的自身表述中，同时又需要这一极限情形。</p>
+<p>&emsp;&emsp;——朗道、栗弗席兹，《量子力学（非相对论理论）》</p>
+</blockquote>
+<p>所以量子力学不符合直觉，并不代表它不符合逻辑。</p>
+<h3 id="Solution-of-Schrodinger-Equations"><a href="#Solution-of-Schrodinger-Equations" class="headerlink" title="Solution of Schrödinger Equations"></a>Solution of Schrödinger Equations</h3><h4 id="Characteristics-of-Energy-Eigenfunctions"><a href="#Characteristics-of-Energy-Eigenfunctions" class="headerlink" title="Characteristics of Energy Eigenfunctions"></a>Characteristics of Energy Eigenfunctions</h4><p>There are three ways to solve the schrödinger equation:</p>
+<ol>
+<li><em>Bruteforce</em></li>
+<li><em>Extreme Cleverness, you know someting about the mathematical structure of the diffential equation, and that teach you some physics.</em></li>
+<li><em>Numerically, computers are stupid, you have to first extract all the physics and reorganize the problem in such way that a stupid computer can do the solution.</em></li>
+</ol>
+<p>&emsp;&emsp;现在我们来求解薛定谔方程<br>$$<br>   i\hbar \frac{\partial }{\partial t} \psi(x,t) &#x3D; \hat{E}\psi(x,t)<br>$$</p>
+<p>先从能量算符的本征函数开始。设系统的初始状态为能量算符的本征函数 $\psi(x,0) &#x3D; \phi_E(x)$ ，它满足<br>$$<br>    \hat{E} \phi_E(x) &#x3D; E \phi_E(x)<br>$$<br>如果在 $t &#x3D; 0$ 的时刻立即测量系统的能量，那将会以 $1$ 的概率得到 $E$ 。这里加上相位因子 $e^{i\alpha}$ 也是同样的，就得到<br>$$<br>    i\hbar \frac{\partial }{\partial t} \psi(x,0) &#x3D; E\psi(x,0)<br>$$</p>
+<p>易得<br>$$<br>    \psi(x,t) &#x3D; e^{-i\frac{Et}{\hbar}}\phi(x),;;\text{set};\omega &#x3D; \frac{E}{\hbar};(\text{De Borglie})<br>$$<br>所以最初处于能量本征态的系统将会保持在这个能量本征态上，变化的只是相位，并且相位的变化是匀速的。</p>
+<p>&emsp;&emsp;波函数形如 $\psi(x,t) &#x3D; e^{-i\omega t}\phi(x)$ 的状态称为<strong>定态</strong>（Stationary States），因为粒子在空间中出现的概率分布不随时间变化，自然坐标的均值也不随时间变化：<br>$$<br>    \begin{aligned}<br>    P(x,t) &#x3D; |\psi(x,t)|^2 &#x3D; |\phi(x)|^2\<br>    \langle x \rangle <em>t &#x3D; \int x P(x,t) dx &#x3D; \langle x \rangle</em>{t &#x3D; 0}<br>\end{aligned}<br>$$<br>&emsp;&emsp;但是世界上没有一个东西的能量是保持不变的，它们在和环境中的其他粒子进行着永无休止的相互作用，在这个过程中不断地传递能量：</p>
+<blockquote>
+<p><em>But not only energy eigen states not typical states, they never exist in the real world.</em></p>
+<p>&emsp;&emsp;——8.04, Quantum Physics I, Allan Adams, MIT</p>
+</blockquote>
+<h4 id="Separation-of-Variables"><a href="#Separation-of-Variables" class="headerlink" title="Separation of Variables"></a>Separation of Variables</h4><p>Expansion 一节已经说明，任意波函数都能向任意物理量对应算符的本征函数作展开，薛定谔方程中出现的是能量算符，自然使用能量算符的<a target="_blank" rel="noopener" href="http://home.ustc.edu.cn/~ustcxkc/2022/07/19/The_Separation_of_Variables/">分离变量法</a>：<br>$$<br>    \psi(x,t) &#x3D; \sum_{n &#x3D; 1}^{\infty} C_n e^{i\omega_n t}\varphi_n(x)<br>$$<br>各项系数的模方即为测得对应能量本征值的概率，它是具有确定的物理含义的。</p>
+<p>同理，动量算符 $\hat{p} &#x3D; \frac{\hbar}{i}\frac{\partial}{\partial x}$ 对应本征动量值 $\hbar k$ 的本征函数为 $\frac{1}{\sqrt{2\pi}}e^{ikx}$ ，所以 Fourier 变换在物理上就是动量算符的本征态叠加原理，这件事在 Fourier Transform 一节中已是见过。</p>
+<blockquote>
+<p><em>Any funciton can be expanded as a superposition of eigenfunctions of any operator at your choice.</em></p>
+<p>&emsp;&emsp;——8.04, Quantum Physics I, Allan Adams, MIT</p>
+</blockquote>
+<p>那么对于势能为 $0$  的能量算符，它的本征函数为<br>$$<br>    \varphi_E(x) &#x3D; C_1 e^{i\omega x} + C_2 e^{-i\omega x}<br>$$<br>所以对于处于一维无限深方势阱中的粒子：<br>$$<br>    \varphi_E(x) &#x3D; A_n \sin k_n x,;;k_n &#x3D; \frac{n\pi}{L},;;n &#x3D; 1,2,\dots<br>$$<br>其中 $A_n$ 是归一化常数。可见，粒子的能量，作为能量算符的本征值，只能取离散的非零整数（这也是 Sturm-Liouville 定理保证的事情）。</p>
+<p>&emsp;&emsp;Fourier Transform 一节指出，任意波函数都能表示为一系列具有确定动量或者一系列具有确定位置的本征函数的叠加，本征值是连续谱：<br>$$<br>    \psi(x) &#x3D; \frac{1}{\sqrt{2\pi}}\int_{-\infty}^{\infty}\varphi(k)e^{ikx}dk<br>$$<br>$$<br>    \psi(x) &#x3D; \int_{-\infty}^{\infty}\psi(x_0)\delta(x-x_0)dx_0<br>$$<br>能量算符的情况则不同，它的本征值好像是离散谱：<br>$$<br>    \psi(x,t) &#x3D; \sum_{n &#x3D; 1}^{\infty} C_n e^{i\omega_n t}\varphi_n(x)<br>$$<br>&emsp;&emsp;这个问题取决于选定的物理系统——空间有限则离散，空间无限则连续。这是用 Fourier 方法求解偏微分方程的必然结果（分离变量法只适用于空间有限的情形，它必然导致本征值离散化）。当然，系统也可以同时具有离散谱区域和连续谱区域。比如一个氢原子周围的电子在原子核附近的能量是离散的，但一旦电离，它的能量就变为连续的。</p>
+<p>&emsp;&emsp;目前，只有将一个波函数 $\psi$ 向能量算符的本征函数基底分解，才能知道 $\psi$ 是如何随时间变化的：薛定谔方程的解就是已知初值条件的波函数的演化。</p>
+<blockquote>
+<p><em>We are going to work with energy eigenfunctions not because they are more moral, more justice, more good, but because they are more convient for solving the time evolution problem in quantum mechanics.</em></p>
+<p>&emsp;&emsp;——8.04, Quantum Physics I, Allan Adams, MIT</p>
+</blockquote>
+<h3 id="Propagator-And-Representation"><a href="#Propagator-And-Representation" class="headerlink" title="Propagator And Representation"></a>Propagator And Representation</h3><h4 id="Dirac-symbles-and-Propagator"><a href="#Dirac-symbles-and-Propagator" class="headerlink" title="Dirac symbles and Propagator"></a>Dirac symbles and Propagator</h4><p>&emsp;&emsp;现在我们换一个角度来审视薛定谔方程，引入 Dirac 记号：<br>$$<br>    i\hbar \frac{\partial }{\partial t} |\Psi(t)\rangle &#x3D; \hat{H} |\Psi(t)\rangle<br>$$<br>&emsp;&emsp;由于数学上的 <strong>同构</strong> 关系，可以将它视为一个一阶微分方程，显然它的解为<br>$$<br>    |\Psi(t)\rangle &#x3D; e^{-i\hat{H}t&#x2F;\hbar} |\Psi(0)\rangle<br>$$<br>此处将算符放上了 $e$ 的指数位置。但是，它和分离变量法得到的结果理应等价：<br>$$<br>    |\Psi(t)\rangle &#x3D; \sum_{n &#x3D; 1} C_n e^{-iE_nt&#x2F;\hbar}|\psi_n(t)\rangle,;;\text{where};\hat{H}|\psi_n(t)\rangle &#x3D; E_n |\psi_n(t)\rangle<br>$$</p>
+<p>下面给出这一事实的证明。引入求和约定，令哈密顿算符满足<br>$$<br>    \hat{H}|n\rangle&#x3D;E_n|n\rangle<br>$$<br>则令 $a &#x3D; -i \left(t-t_0\right) &#x2F; \hbar$ ，<br>$$<br>    \begin{aligned}<br>    |\psi(t)\rangle&amp;&#x3D;e^{a\hat{H}}\left|\psi\left(t_0\right)\right\rangle\<br>    &amp;&#x3D;\frac{a^j}{j!}\hat{H}^j\cdot|n\rangle \langle n| \psi\left(t_0\right)\rangle\<br>    &amp;&#x3D; \frac{a^j}{j!}E_n^j|n\rangle \langle n| \psi\left(t_0\right)\rangle\<br>    &amp;&#x3D;e^{aE_n}|n\rangle \langle n| \psi\left(t_0\right)\rangle\<br>    \end{aligned}<br>$$<br>即<br>$$<br>    |\psi(t)\rangle&#x3D;\sum_n e^{-i E_n\left(t-t_0\right) &#x2F; \hbar}\left\langle n \mid \psi\left(t_0\right)\right\rangle|n\rangle<br>$$</p>
+<p>所以称酉算子（unitary operator） $\hat{U}(t)\equiv e^{-i\hat{H}t&#x2F;\hbar}$ 为<strong>传播子</strong>（propagator），它控制着波矢的时间演化。</p>
+<h4 id="Representation-Invariance"><a href="#Representation-Invariance" class="headerlink" title="Representation Invariance"></a>Representation Invariance</h4><h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><p>[1].<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV15t411z7dL?p=1&vd_source=557d1419bd34f91b4d4aac52ed68ff8d" title="8.04, Quantum Physics I, Allan Adams, MIT">8.04, Quantum Physics I, Allan Adams, MIT</a></p>
+<p>[2].Ira N. Levine, Quantum Chemistry, the Seventh Edition, PEARSON</p>
+<p>[3].曾谨言, 量子力学, 第五版, 科学出版社</p>
+<p>[4].朗道, 栗弗席兹, 理论物理学教程 (第三卷): 量子力学 (非相对论理论), 第六版, 高等教育出版社</p>
+<p>[5].赵凯华, 罗蔚茵, 量子物理, 第二版, 高等教育出版社</p>
+<p>[6].朱栋培, 量子力学基础, 中国科学技术大学出版社</p>
+<p>[7].顾樵, 数学物理方法, 科学出版社</p>
+<p>[8].Brian C. Hall, Quantum Theory for Mathematicians, 世界图书出版公司</p>
+<p>[9].严以京, Quantum Physics, 量子物理（英）2022, Autumn</p>
+<p>[10].Dirac, The Principles of Quantum Mechanics, 机械工业出版社</p>
+<p>[11].Richard Feymann, The Feymann Lectures on Physics, Volume III, 上海科学技术出版社</p>
+</font>
+</font>
+</div><hr class="custom-hr"/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> Comment</span></div></div><div class="comment-wrap"><div><div id="waline-wrap"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/avatar.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">AYIN</div><div class="author-info__description"></div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">7</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">5</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">3</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/Bessgendre"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/Bessgendre" target="_blank" title="Github"><i class="fab fa-github" style="color: #24292e;"></i></a><a class="social-icon" href="mailto:xuankecai@gmail.com" target="_blank" title="Email"><i class="fas fa-envelope" style="color: #4a7dbe;"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>Announcement</span></div><div class="announcement_content">τὸ τί ἦν εἶναι</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>Recent Post</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2022/10/29/The_Analysis_of_USTC/" title="The Analysis of USTC"><img src="/img/literature/convolution.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="The Analysis of USTC"/></a><div class="content"><a class="title" href="/2022/10/29/The_Analysis_of_USTC/" title="The Analysis of USTC">The Analysis of USTC</a><time datetime="2022-10-29T05:00:00.000Z" title="Created 2022-10-29 00:00:00">2022-10-29</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/01/11/The_Faults_of_Zhiyong/" title="The Faults of Zhiyong"><img src="/img/literature/faults.webp" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="The Faults of Zhiyong"/></a><div class="content"><a class="title" href="/2022/01/11/The_Faults_of_Zhiyong/" title="The Faults of Zhiyong">The Faults of Zhiyong</a><time datetime="2022-01-11T06:00:00.000Z" title="Created 2022-01-11 00:00:00">2022-01-11</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/12/29/Calculation_Method/" title="An Calculation Method Modified by Symbolic Computation in Analytical Chemistry"><img src="https://pica.zhimg.com/v2-a49add4947277419265c182d8b835d36_720w.jpg?source=d16d100b" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="An Calculation Method Modified by Symbolic Computation in Analytical Chemistry"/></a><div class="content"><a class="title" href="/2021/12/29/Calculation_Method/" title="An Calculation Method Modified by Symbolic Computation in Analytical Chemistry">An Calculation Method Modified by Symbolic Computation in Analytical Chemistry</a><time datetime="2021-12-29T16:20:12.000Z" title="Created 2021-12-29 10:20:12">2021-12-29</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/12/05/Theology/" title="Some Questions about The Theology"><img src="/img/literature/theology.jpeg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Some Questions about The Theology"/></a><div class="content"><a class="title" href="/2021/12/05/Theology/" title="Some Questions about The Theology">Some Questions about The Theology</a><time datetime="2021-12-05T06:00:00.000Z" title="Created 2021-12-05 00:00:00">2021-12-05</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/10/22/The_Analysis_of_Time/" title="The Analysis of Time"><img src="/img/literature/time.jpeg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="The Analysis of Time"/></a><div class="content"><a class="title" href="/2021/10/22/The_Analysis_of_Time/" title="The Analysis of Time">The Analysis of Time</a><time datetime="2021-10-22T05:00:00.000Z" title="Created 2021-10-22 00:00:00">2021-10-22</time></div></div></div></div><div class="card-widget" id="card-newest-comments"><div class="item-headline"><i class="fas fa-comment-dots"></i><span>Latest Comments</span></div><div class="aside-list"><span>loading...</span></div></div><div class="card-widget card-categories"><div class="item-headline">
+            <i class="fas fa-folder-open"></i>
+            <span>Categories</span>
+            
+            </div>
+            <ul class="card-category-list" id="aside-cat-list">
+            <li class="card-category-list-item "><a class="card-category-list-link" href="/categories/LITERATURE/"><span class="card-category-list-name">LITERATURE</span><span class="card-category-list-count">5</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/NOTES/"><span class="card-category-list-name">NOTES</span><span class="card-category-list-count">1</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/THESIS/"><span class="card-category-list-name">THESIS</span><span class="card-category-list-count">1</span></a></li>
+            </ul></div><div class="card-widget card-tags"><div class="item-headline"><i class="fas fa-tags"></i><span>Tags</span></div><div class="card-tag-cloud"><a href="/tags/Chemistry/" style="font-size: 1.3em; color: rgb(101, 174, 145)">Chemistry</a><a href="/tags/Mathematics/" style="font-size: 1.15em; color: rgb(78, 55, 44)">Mathematics</a><a href="/tags/Physics/" style="font-size: 1.15em; color: rgb(192, 98, 135)">Physics</a><a href="/tags/Philosophy/" style="font-size: 1.45em; color: rgb(17, 28, 83)">Philosophy</a><a href="/tags/History/" style="font-size: 1.15em; color: rgb(116, 17, 163)">History</a></div></div><div class="card-widget card-archives"><div class="item-headline"><i class="fas fa-archive"></i><span>Archives</span></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2022/10/"><span class="card-archive-list-date">October 2022</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2022/01/"><span class="card-archive-list-date">January 2022</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2021/12/"><span class="card-archive-list-date">December 2021</span><span class="card-archive-list-count">2</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2021/10/"><span class="card-archive-list-date">October 2021</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2021/05/"><span class="card-archive-list-date">May 2021</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2020/05/"><span class="card-archive-list-date">May 2020</span><span class="card-archive-list-count">1</span></a></li></ul></div><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>Info</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">Article :</div><div class="item-count">7</div></div><div class="webinfo-item"><div class="item-name">UV :</div><div class="item-count" id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">PV :</div><div class="item-count" id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">Last Update :</div><div class="item-count" id="last-push-date" data-lastPushDate="2023-10-21T03:12:20.805Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2022 - 2023 By AYIN</div><div class="framework-info"><span>Framework </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>Theme </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="darkmode" type="button" title="Toggle Between Light And Dark Mode"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="Toggle between Single-column and Double-column"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="Setting"><i class="fas fa-cog fa-spin"></i></button><a id="to_comment" href="#post-comment" title="Scroll To Comments"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="Back To Top"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"><script>(() => {
+  const initWaline = () => {
+    const waline = Waline.init(Object.assign({
+      el: '#waline-wrap',
+      serverURL: 'https://blog-comments-five.vercel.app',
+      pageview: false,
+      dark: 'html[data-theme="dark"]',
+      path: window.location.pathname,
+      comment: false,
+    }, null))
+  }
+
+  const loadWaline = async () => {
+    if (typeof Waline === 'object') initWaline()
+    else {
+      await getCSS('https://cdn.jsdelivr.net/npm/@waline/client/dist/waline.min.css')
+      await getScript('https://cdn.jsdelivr.net/npm/@waline/client/dist/waline.min.js')
+      initWaline()
+    }
+  }
+
+  if ('Waline' === 'Waline' || !false) {
+    if (false) btf.loadComment(document.getElementById('waline-wrap'),loadWaline)
+    else setTimeout(loadWaline, 0)
+  } else {
+    window.loadOtherComment = loadWaline
+  }
+})()</script></div><script>window.addEventListener('load', () => {
+  const changeContent = content => {
+    if (content === '') return content
+
+    content = content.replace(/<img.*?src="(.*?)"?[^\>]+>/ig, '[image]') // replace image link
+    content = content.replace(/<a[^>]+?href=["']?([^"']+)["']?[^>]*>([^<]+)<\/a>/gi, '[link]') // replace url
+    content = content.replace(/<pre><code>.*?<\/pre>/gi, '[code]') // replace code
+    content = content.replace(/<[^>]+>/g,"") // remove html tag
+
+    if (content.length > 150) {
+      content = content.substring(0,150) + '...'
+    }
+    return content
+  }
+
+  const generateHtml = array => {
+    let result = ''
+
+    if (array.length) {
+      for (let i = 0; i < array.length; i++) {
+        result += '<div class=\'aside-list-item\'>'
+
+        if (true) {
+          const name = 'src'
+          result += `<a href='${array[i].url}' class='thumbnail'><img ${name}='${array[i].avatar}' alt='${array[i].nick}'></a>`
+        }
+
+        result += `<div class='content'>
+        <a class='comment' href='${array[i].url}' title='${array[i].content}'>${array[i].content}</a>
+        <div class='name'><span>${array[i].nick} / </span><time datetime="${array[i].date}">${btf.diffDate(array[i].date, true)}</time></div>
+        </div></div>`
+      }
+    } else {
+      result += 'No comments'
+    }
+
+    let $dom = document.querySelector('#card-newest-comments .aside-list')
+    $dom.innerHTML= result
+    window.lazyLoadInstance && window.lazyLoadInstance.update()
+    window.pjax && window.pjax.refresh($dom)
+  }
+
+  const getComment = async () => {
+    try {
+      const res = await fetch('https://blog-comments-five.vercel.app/api/comment?type=recent&count=6', { method: 'GET' })
+      const result = await res.json()
+      const walineArray = result.data.map(e => {
+        return {
+          'content': changeContent(e.comment),
+          'avatar': e.avatar,
+          'nick': e.nick,
+          'url': e.url + '#' + e.objectId,
+          'date': e.time || e.insertedAt
+        }
+      })
+      saveToLocal.set('waline-newest-comments', JSON.stringify(walineArray), 10/(60*24))
+      generateHtml(walineArray)
+    } catch (err) {
+      console.error(err)
+      const $dom = document.querySelector('#card-newest-comments .aside-list')
+      $dom.textContent= "Unable to retrieve comments, please check the configuration"
+    }
+  }
+
+  const newestCommentInit = () => {
+    if (document.querySelector('#card-newest-comments .aside-list')) {
+      const data = saveToLocal.get('waline-newest-comments')
+      if (data) {
+        generateHtml(JSON.parse(data))
+      } else {
+        getComment()
+      }
+    }
+  }
+
+  newestCommentInit()
+  document.addEventListener('pjax:complete', newestCommentInit)
+})</script><script defer="defer" id="fluttering_ribbon" mobile="false" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/canvas-fluttering-ribbon.min.js"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
