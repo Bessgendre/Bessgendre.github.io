@@ -1,0 +1,238 @@
+<!DOCTYPE html><html lang="en" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>An Introduction to Motility-Induced Phase Separation | LUMINESCENCE</title><meta name="author" content="AYIN"><meta name="copyright" content="AYIN"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="Selective Overview of Active Matter, Aimming on Theory, Simulation and Experimental Justification.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="An Introduction to Motility-Induced Phase Separation">
+<meta property="og:url" content="https://bessgendre.github.io/2022/06/25/MIPS/index.html">
+<meta property="og:site_name" content="LUMINESCENCE">
+<meta property="og:description" content="Selective Overview of Active Matter, Aimming on Theory, Simulation and Experimental Justification.">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://bessgendre.github.io/img/mathphysics/mips.png">
+<meta property="article:published_time" content="2022-06-25T15:20:12.000Z">
+<meta property="article:modified_time" content="2022-06-25T05:00:00.000Z">
+<meta property="article:author" content="AYIN">
+<meta property="article:tag" content="Nonlinear Chemistry">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://bessgendre.github.io/img/mathphysics/mips.png"><link rel="shortcut icon" href="/img/avatar.jpg"><link rel="canonical" href="https://bessgendre.github.io/2022/06/25/MIPS/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: 'Copy Successful',
+    error: 'Copy Error',
+    noSupport: 'Browser Not Supported'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: 'Just now',
+    min: 'minutes ago',
+    hour: 'hours ago',
+    day: 'days ago',
+    month: 'months ago'
+  },
+  copyright: {"limitCount":50,"languages":{"author":"Author: AYIN","link":"Link: ","source":"Source: LUMINESCENCE","info":"Copyright is owned by the author. For commercial reprints, please contact the author for authorization. For non-commercial reprints, please indicate the source."}},
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid/dist/infinitegrid.min.js',
+    buttonText: 'Load More'
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: true,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'An Introduction to Motility-Induced Phase Separation',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2022-06-25 00:00:00'
+}</script><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+    
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
+
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
+
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
+    
+      win.activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+        if (t === 'dark') activateDarkMode()
+        else if (t === 'light') activateLightMode()
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.3.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/avatar.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">12</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">7</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">3</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> Link</span></a></div><div class="menus_item"><a class="site-page" href="/download/"><i class="fa-fw fas fa-download"></i><span> Download</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('/img/mathphysics/mips.png')"><nav id="nav"><span id="blog-info"><a href="/" title="LUMINESCENCE"><span class="site-name">LUMINESCENCE</span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> Link</span></a></div><div class="menus_item"><a class="site-page" href="/download/"><i class="fa-fw fas fa-download"></i><span> Download</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">An Introduction to Motility-Induced Phase Separation</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">Created</span><time class="post-meta-date-created" datetime="2022-06-25T15:20:12.000Z" title="Created 2022-06-25 10:20:12">2022-06-25</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">Updated</span><time class="post-meta-date-updated" datetime="2022-06-25T05:00:00.000Z" title="Updated 2022-06-25 00:00:00">2022-06-25</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/THESIS/">THESIS</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="An Introduction to Motility-Induced Phase Separation"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">Post Views:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><font size="4">
+<div class="btn-center">
+<a class="btn-beautify outline blue larger" href="https://bessgendre.github.io/files/MIPS.pdf" 
+  title="Full Text in PDF"><i class="far fa-hand-point-right"></i><span>Full Text in PDF</span></a>
+</div>
+<h2 id="摘要">摘要</h2>
+<p>  活化物质包括自泳胶粒和微生物两类。由于能量的不断耗散，它们并不遵守热力学平衡定律，也不服从玻尔兹曼分布，并且会在移动较慢的地方积聚。并且生物化学以及空间位阻也会使得它们在密度较大的地方减速。这种正反馈将最终导致高密度相和低密度相的动力诱导相分离 (MIPS) 。在一阶微分的意义下，这种活化的自推进粒子和非活化、但是相互吸引的粒子之间存在着对应关系，在计算机模拟中也被证实和平衡态的非活化物质有深层次的联系。</p>
+<p>  但在更高阶微分意义下，这种对应关系将不再适用——新的非平衡现象涌现了出来。本文将聚焦于理论模型、计算机模拟与实验验证三个方面，有选择性地概述了飞速发展中的 MIPS 领域。</p>
+<p><strong>关键字</strong>：自泳粒子，自泳胶体，细菌，相分离，运动性，活性布朗粒子</p>
+<h2 id="Abstract">Abstract</h2>
+<p>  Active matter, including self-phorestic synthetic colloids and micro-organisms, consume energy continuously thus allowing it self to bypass the laws of equilibrium thermodynamics and Boltzmann distribution. It is observed that self-propelled particles aggregate where they move more slowly, and may also slow down under higher density for either biochemical or steric facts, which creates positive feedback that leads to motility-induced phase separation (MIPS) between dense and dilute fluid phases. At leading order in gradients, there are some relations between the variable-speed, self-propelled particles and passive particles with attractions, which is confirmed by computational simulations.</p>
+<p>  However, as new phenomenology emerging without equilibrium conterparts, this deep link breaks down at highter order of gradients. Aimming on theory, simulation and experimental justification, this review gives a selective overview of this fast-developing field of MIPS.</p>
+<p><strong>Keywords</strong>: self-propelled particles,self-phoretic colloids, bacteria, phase separation, motility, active Brownian particles</p>
+<h2 id="引言">引言</h2>
+<p>  “活化物质”是一种非平衡系统，它的能量在微观尺度下不断耗散，同时系统的每一部分都在进行着不可逆的运动。这要求组成系统的每一个“粒子”具有自驱动的能力，比如自然界中的鸟群与鱼群、细胞中的肌动蛋白微丝以及细胞微管或者人工合成的自泳胶体[3,24]等等。虽然这些领域都有各自独特的研究成果，但对这一类非平衡系统的普适性研究正愈发引起人们的关注——活化粒子和处于平衡态的粒子受到的作用力相似，人们自然期望这样的非平衡系统在常见的热力学理论框架下能有一套独特的表述形式。</p>
+<p>  由活化物质组成的热力学系统具有许多新的行为，比如动力学手性 (dynamic chirality) [7-10] 极化集群 (polar swarms) [11-14] 和涡旋 (collective vortex) [13-16] 等非平衡现象。又如，当某种细菌的局部浓度超过了特定上限，将会聚集在在水体表面形成生物膜——这在平衡系统中是不会发生的。所以对均匀分散的系统如何演化为非均匀的系统的研究将会为人们理解细菌的群体行为提供全新的视角。此外，复合新材料以及软物质等领域的许多方面都和活性物质系统有关。</p>
+<p>  在活性物质的研究领域中，最令人瞩目的是动力诱导下具有不同密度两相的分离 (MIPS)。非活性粒子的相分离来源于粒子间的吸引作用抵抗了混合熵的增加。但活性粒子的相分离则完全起源于非平衡系统内禀的动力学性质——即使粒子间存在完全的排斥作用，系统仍然会向类似气液相分离的方向演化，这对于非活性物质来说几乎是不可能的 [4,5] 。当活性粒子的速度随局部浓度的增加而下降到一定程度时，均匀分布将会愈发不稳定，从而形成稀薄相与稠密相的分离，其中稠密相的整体速度较为缓慢，使得它的运动与熔岩灯中发光蜡非常相似[3]。</p>
+<p>  由于相关文献纷繁冗杂，本文将关注其中最重要的方面，从相分离的动力学起源出发，阐明相互作用对活化粒子的影响。我们将特别讨论活性粒子的运动模式及其微观粒子模型，并概述这一领域在分子模拟和实验验证两方面的进展。</p>
+<h2 id="参考文献">参考文献</h2>
+</font>
+<p>[1] Holger Stark. Artificial chemotaxis of self-phoretic active colloids: Collective behavior. Accounts of Chemical Research, 51(11):2681–2688, 2018.</p>
+<p>[2] Matthias Schmidt. Power functional theory for many-body dynamics. Reviews of Modern Physics, 94(1), 2022.</p>
+<p>[3] Michael E. Cates and Julien Tailleur. Motility-Induced Phase Separation, volume 6 of Annual Review of Condensed Matter Physics, pages 219–244. 2015.</p>
+<p>[4] M. Cristina Marchetti, Yaouen Fily, Silke Henkes, Adam Patch, and David Yllanes. Minimal model of active colloids highlights the role of mechanical interactions in controlling the emergent behavior of active matter. Current Opinion in Colloid &amp; Interface Science, 21:34–43, 2016.</p>
+<p>[5] Zhan Ma, Mingcheng Yang, and Ran Ni. Dynamic assembly of active colloids: Theory and simulation. Advanced Theory and Simulations, 3(8), 2020.</p>
+<p>[6] Yulei Fu, Hengao Yu, Xinli Zhang, Paolo Malgaretti, Vimal Kishore, and Wendong Wang. Microscopic swarms: From active matter physics to biomedical and environmental applications. Micromachines, 13(2), 2022.</p>
+<p>[7] Ingmar H. Riedel, Karsten Kruse, and Jonathon Howard. A self-organized vortex array of hydrodynamically entrained sperm cells. Science, 309(5732):300–303, 2005.</p>
+<p>[8] DiLuzi W.and Turner L.and Mayer and M. Escherichia coli swim on the right-hand side. Nature, 435(1271-1274), 2005.</p>
+<p>[9] Felix Kümmel, Borge ten Hagen, Raphael Wittkowski, Ivo Buttinoni, Ralf Eichhorn, Giovanni Volpe, Hartmut Löwen, and Clemens Bechinger. Circular motion of asymmetric self-propelling particles. Phys. Rev. Lett., 110:198302, May 2013.</p>
+<p>[10] Jie Su, Huijun Jiang, and Zhonghuai Hou. Disordered hyperuniform obstacles enhance sorting of dynamically chiral microswimmers. Soft Matter, 15:6830–6835, 2019.</p>
+<p>[11] Bricard, Caussin, and Desreumaux. Emergence of macroscopic directed motion in populations of motile colloids. Nature, 503(95-98), 2013.</p>
+<p>[12] Yongliang Gou, Huijun Jiang, and Zhonghuai Hou. Emergent swarming states in active particles system with opposite anisotropic interactions. Chinese Journal of Chemical Physics, 33(717), 2020.</p>
+<p>[13] Yan J.and Han M.and Zhang J. Reconfiguring active particles by electrostatic imbalance. Nature Mater, 15(1095-1099), 2016.</p>
+<p>[14] Hamid Karani, Gerardo E. Pradillo, and Petia M. Vlahovska. Tuning the random walk of active colloids: From individual run-and-tumble to dynamic clustering. Phys. Rev. Lett., 123:208002, Nov 2019.</p>
+<p>[15] Sumino Y.and Nagai K.and Shitaka Y. Large-scale vortex lattice emerging from collectively moving microtubules. Nature, 483(448-452), 2012.</p>
+<p>[16] Jiang Huijun, Huai Ding, Mingfeng Pu, and Zhonghuai Hou. Emergence of collective dynamical chirality for achiral active particles. Soft Matter, 13:836–841, 2017.</p>
+<p>[17] Antonio Celani, Stefano Bo, Ralf Eichhorn, and Erik Aurell. Anomalous thermodynamics at the microscale. Phys. Rev. Lett., 109:260603, Dec 2012.</p>
+<p>[18] Suraj Shankar and M. Cristina Marchetti. Hidden entropy production and work fluctuations in an ideal active gas. Phys. Rev. E, 98:020604, Aug 2018.</p>
+<p>[19] Emanuele Crosato, Mikhail Prokopenko, and Richard E. Spinney. Irreversibility and emergent structure in active matter. Phys. Rev. E, 100:042613, Oct 2019.</p>
+<p>[20] Michael E. Cates and Julien Tailleur. Motility-induced phase separation. Annual Review of Condensed Matter Physics, 6(1):219–244, 2015.</p>
+<p>[21] Suvendu Mandal, Benno Liebchen, and Hartmut Löwen. Motility-induced temperature difference in coexisting phases. Phys. Rev. Lett., 123:228001, Nov 2019.</p>
+<p>[22] Hartmut Löwen. Inertial effects of self-propelled particles: From active brownian to active langevin motion. J. Chem. Phys., 152(040901), 2020.</p>
+<p>[23] Joakim Stenhammar. An introduction to motility-induced phase separation. 12 2021.</p>
+<p>[24] I. Theurkauff, C. Cottin-Bizonne, J. Palacci, C. Ybert, and L. Bocquet. Dynamic clustering in active colloidal suspensions with chemical signaling. Phys.Rev.Lett., 108(26), 2012.</p>
+<p>[25] J. Su, H. J. Jiang, and Z. H. Hou. Inertia-induced nucleation-like motility-induced phase separation. New Journal of Physics, 23(1):8, 2021.</p>
+<p>[26] DanV. Goia and Egon Matijevi. Tailoring the particle size of monodispersed colloidal gold. Colloids and Surfaces A: Physicochemical and Engineering Aspects, 146(1):139–152, 1999.</p>
+<p>[27] Julian Bialké , Thomas Speck, and Hartmut Löwen. Crystallization in a dense suspension of self-propelled particles. Physical Review Letters, 108(16), apr 2012.</p>
+<p>[28] H. Budrene, E.and Berg. Dynamics of formation of symmetrical patterns by chemotactic bacteria. Nature, 376(49-53), 1995.</p>
+<p>[29] J. Saragosti, V. Calvez, N. Bournaveas, B. Perthame, A. Buguin, and P. Silberzan. Directional persistence of chemotactic bacteria in a traveling concentration wave. Proceedings of the National Academy of Sciences, 108(39):16235–16240, 2011.</p>
+<p>[30] Evelyn F. Keller and Lee A. Segel. Initiation of slime mold aggregation viewed as an instability. Journal of Theoretical Biology, 26(3):399–415, 1970.</p>
+<p>[31] Michael P. Brenner, Leonid S. Levitov, and Elena O. Budrene. Physical mechanisms for chemotactic pattern formation by bacteria. Biophysical Journal, 74(4):1677–1693, 1998.</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>Author: </span><span class="post-copyright-info"><a href="https://Bessgendre.github.io">AYIN</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>Link: </span><span class="post-copyright-info"><a href="https://bessgendre.github.io/2022/06/25/MIPS/">https://bessgendre.github.io/2022/06/25/MIPS/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>Copyright Notice: </span><span class="post-copyright-info">All articles in this blog are licensed under <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> unless stating additionally.</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/Nonlinear-Chemistry/">Nonlinear Chemistry</a></div><div class="post_share"><div class="social-share" data-image="/img/mathphysics/mips.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2022/08/10/Quan_I_Wave_Function/" title="Quantum Mechanics I - Wave Function"><img class="cover" src="/img/mathphysics/quantum_mechanics/wave_function.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">Previous</div><div class="prev_info">Quantum Mechanics I - Wave Function</div></div></a></div><div class="next-post pull-right"><a href="/2022/01/11/The_Faults_of_Zhiyong/" title="The Faults of Zhiyong"><img class="cover" src="/img/literature/faults.webp" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">Next</div><div class="next_info">The Faults of Zhiyong</div></div></a></div></nav><hr class="custom-hr"/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> Comment</span></div></div><div class="comment-wrap"><div><div id="waline-wrap"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/avatar.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">AYIN</div><div class="author-info__description"></div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">12</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">7</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">3</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/Bessgendre"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/Bessgendre" target="_blank" title="Github"><i class="fab fa-github" style="color: #24292e;"></i></a><a class="social-icon" href="mailto:xuankecai@gmail.com" target="_blank" title="Email"><i class="fas fa-envelope" style="color: #4a7dbe;"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>Announcement</span></div><div class="announcement_content">τὸ τί ἦν εἶναι</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>Contents</span><span class="toc-percentage"></span></div><div class="toc-content is-expand"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%91%98%E8%A6%81"><span class="toc-text">摘要</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Abstract"><span class="toc-text">Abstract</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BC%95%E8%A8%80"><span class="toc-text">引言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%82%E8%80%83%E6%96%87%E7%8C%AE"><span class="toc-text">参考文献</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>Recent Post</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2022/12/25/LLPS/" title="Theoretical Study on Biological Phase Transition Process"><img src="/img/mathphysics/phase.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Theoretical Study on Biological Phase Transition Process"/></a><div class="content"><a class="title" href="/2022/12/25/LLPS/" title="Theoretical Study on Biological Phase Transition Process">Theoretical Study on Biological Phase Transition Process</a><time datetime="2022-12-25T06:00:00.000Z" title="Created 2022-12-25 00:00:00">2022-12-25</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/10/29/The_Analysis_of_USTC/" title="The Analysis of USTC"><img src="/img/literature/convolution.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="The Analysis of USTC"/></a><div class="content"><a class="title" href="/2022/10/29/The_Analysis_of_USTC/" title="The Analysis of USTC">The Analysis of USTC</a><time datetime="2022-10-29T05:00:00.000Z" title="Created 2022-10-29 00:00:00">2022-10-29</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/09/15/Quan_III_Duality/" title="Quantum Mechanics III - Wave Particle Duality"><img src="/img/mathphysics/quantum_mechanics/duality.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Quantum Mechanics III - Wave Particle Duality"/></a><div class="content"><a class="title" href="/2022/09/15/Quan_III_Duality/" title="Quantum Mechanics III - Wave Particle Duality">Quantum Mechanics III - Wave Particle Duality</a><time datetime="2022-09-15T05:00:00.000Z" title="Created 2022-09-15 00:00:00">2022-09-15</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/09/01/Quan_II_Representation/" title="Quantum Mechanics II - Dirac Representation Theory"><img src="/img/mathphysics/quantum_mechanics/representation.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Quantum Mechanics II - Dirac Representation Theory"/></a><div class="content"><a class="title" href="/2022/09/01/Quan_II_Representation/" title="Quantum Mechanics II - Dirac Representation Theory">Quantum Mechanics II - Dirac Representation Theory</a><time datetime="2022-09-01T05:00:00.000Z" title="Created 2022-09-01 00:00:00">2022-09-01</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/08/10/Quan_I_Wave_Function/" title="Quantum Mechanics I - Wave Function"><img src="/img/mathphysics/quantum_mechanics/wave_function.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Quantum Mechanics I - Wave Function"/></a><div class="content"><a class="title" href="/2022/08/10/Quan_I_Wave_Function/" title="Quantum Mechanics I - Wave Function">Quantum Mechanics I - Wave Function</a><time datetime="2022-08-10T05:00:00.000Z" title="Created 2022-08-10 00:00:00">2022-08-10</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2022 - 2023 By AYIN</div><div class="framework-info"><span>Framework </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>Theme </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="Read Mode"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="Toggle Between Light And Dark Mode"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="Toggle between Single-column and Double-column"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="Setting"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="Table Of Contents"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="Scroll To Comments"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="Back To Top"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.css"><script src="https://cdn.jsdelivr.net/npm/katex/dist/contrib/copy-tex.min.js"></script><script>(() => {
+  document.querySelectorAll('#article-container span.katex-display').forEach(item => {
+    btf.wrap(item, 'div', { class: 'katex-wrap'})
+  })
+})()</script><script>(() => {
+  const initWaline = () => {
+    const waline = Waline.init(Object.assign({
+      el: '#waline-wrap',
+      serverURL: 'https://blog-comments-five.vercel.app',
+      pageview: false,
+      dark: 'html[data-theme="dark"]',
+      path: window.location.pathname,
+      comment: false,
+    }, null))
+  }
+
+  const loadWaline = async () => {
+    if (typeof Waline === 'object') initWaline()
+    else {
+      await getCSS('https://cdn.jsdelivr.net/npm/@waline/client/dist/waline.min.css')
+      await getScript('https://cdn.jsdelivr.net/npm/@waline/client/dist/waline.min.js')
+      initWaline()
+    }
+  }
+
+  if ('Waline' === 'Waline' || !false) {
+    if (false) btf.loadComment(document.getElementById('waline-wrap'),loadWaline)
+    else setTimeout(loadWaline, 0)
+  } else {
+    window.loadOtherComment = loadWaline
+  }
+})()</script></div><script defer="defer" id="fluttering_ribbon" mobile="false" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/canvas-fluttering-ribbon.min.js"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
